@@ -1,0 +1,24 @@
+@use "../abstracts/mixins" as mixin;
+@use "../abstracts/functions" as *;
+
+//SHARED and UTILITY CLASSES//
+.container {
+  --width: 80%;
+  width: min(var(--width), rem(1110px));
+  margin: 0 auto;
+
+  @include mixin.breakpoint(sm) {
+    --width: 90%;
+  }
+}
+
+.screenReaderOnly {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
