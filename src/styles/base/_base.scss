@@ -6,7 +6,7 @@
   --clr-light-gray: hsl(225, 17%, 82%); //#C8CCD8
   --clr-very-light-gray: hsl(230, 21%, 95%); //EEEFF4
   --clr-red: hsl(0, 68%, 61%); //#DF5656
-  // --clr-white: hsl(0, 0%, 100%);
+  --clr-white: hsl(0, 0%, 100%);
 }
 
 html,
@@ -37,6 +37,7 @@ select {
   font: inherit;
 }
 
+a,
 button {
   background-color: transparent;
   cursor: pointer;

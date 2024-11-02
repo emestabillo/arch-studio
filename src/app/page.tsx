@@ -1,6 +1,17 @@
-// import Image from "next/image";
-// import styles from "./page.module.css";
+import arrow from "../../public/icons/icon-arrow.svg";
+import Button from "@/components/Button";
 
 export default function Home() {
-  return <main>Hello</main>;
+  return (
+    <main>
+      Hello
+      <Button
+        text="Click me"
+        href="/about"
+        // onClick={() => console.log("Button clicked")}
+      />
+      <Button icon={arrow} />
+      <Button text={"02"} variant="light" />
+    </main>
+  );
 }
