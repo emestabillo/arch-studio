@@ -1,5 +1,5 @@
-@use "../styles/abstracts/mixins" as mixin;
-@use "../styles/abstracts/functions" as *;
+@use "../../styles/abstracts/mixins" as mixin;
+@use "../../styles/abstracts/functions" as *;
 
 .btn {
   --transition: 0.2s ease;
