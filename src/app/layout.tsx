@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { League_Spartan } from "next/font/google";
-import "../styles/main.scss";
+// import "../styles/main.scss";
+import "./global.scss";
 import Header from "@/components/Header/Header";
 import { Navlinks } from "@/shared/Navlinks";
+import Footer from "@/components/Footer/Footer";
 
 const spartan = League_Spartan({
   subsets: ["latin"],
@@ -25,6 +27,7 @@ export default function RootLayout({
       <body className={`${spartan.variable}`}>
         <Header links={Navlinks} />
         {children}
+        <Footer links={Navlinks} />
       </body>
     </html>
   );

@@ -1,5 +1,6 @@
 import styles from "./Button.module.scss";
 import Image from "next/image";
+import Link from "next/link";
 
 type ButtonProps = {
   text?: string;
@@ -17,10 +18,18 @@ function Button({
   icon,
   alt = "",
 }: ButtonProps) {
+  if (href) {
+    return (
+      <Link href={href} className={`${styles.btn} ${styles[variant]}`}>
+        {text} {icon && <Image src={icon} alt={alt} />}
+      </Link>
+    );
+  }
+
   return (
-    <a href={href} className={`${styles.btn} ${styles[variant]}`}>
+    <button className={`${styles.btn} ${styles[variant]}`}>
       {text} {icon && <Image src={icon} alt={alt} />}
-    </a>
+    </button>
   );
 }
 
