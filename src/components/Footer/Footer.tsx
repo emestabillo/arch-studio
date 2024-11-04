@@ -27,7 +27,7 @@ function Footer({ links }: NavlinksProps) {
             })}
           </ul>
         </nav>
-        <Button text="see our portfolio" icon={arrow} />
+        <Button href="/portfolio" text="see our portfolio" icon={arrow} />
       </div>
     </footer>
   );
