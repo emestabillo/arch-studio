@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { League_Spartan } from "next/font/google";
-// import "../styles/main.scss";
 import "./global.scss";
 import Header from "@/components/Header/Header";
 import { Navlinks } from "@/shared/Navlinks";

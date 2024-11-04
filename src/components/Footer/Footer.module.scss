@@ -30,8 +30,13 @@
 
 .logoContainer {
   background-color: var(--clr-dark-blue);
-  padding: rem(48px) rem(30px);
   max-width: rem(120px);
+  padding: rem(48px) rem(30px);
+
+  @include breakpoint(lg) {
+    max-width: rem(200px);
+    padding: rem(80px) rem(52px);
+  }
 
   img {
     height: auto;
@@ -56,6 +61,10 @@
     padding-block: rem(32px);
     padding-inline: 10%;
     position: relative;
+  }
+
+  @include breakpoint(lg) {
+    padding-block: rem(67px);
   }
 
   &::after {
