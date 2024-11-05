@@ -1,3 +1,5 @@
+@use "../../styles/abstracts/index" as *;
+
 :root {
   //Colors
   --clr-dark-blue: hsl(220, 14%, 12%); //#1B1D23
@@ -7,6 +9,14 @@
   --clr-very-light-gray: hsl(230, 21%, 95%); //EEEFF4
   --clr-red: hsl(0, 68%, 61%); //#DF5656
   --clr-white: hsl(0, 0%, 100%);
+
+  --spacing-top: #{rem(36px)};
+  --spacing-bottom: #{rem(36px)};
+
+  @include breakpoint(sm) {
+    --spacing-top: #{rem(100px)};
+    --spacing-bottom: #{rem(100px)};
+  }
 }
 
 html,

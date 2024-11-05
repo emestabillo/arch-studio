@@ -23,6 +23,8 @@ h1 {
 }
 
 h2 {
+  color: var(--clr-dark-blue);
+  font-size: rem(40px);
   letter-spacing: -0.036em;
 
   @include mixin.breakpoint(md) {

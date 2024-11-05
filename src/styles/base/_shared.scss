@@ -22,3 +22,11 @@
   padding: 0;
   border: 0;
 }
+
+.spacing-top {
+  margin-top: var(--spacing-top);
+}
+
+.spacing-bottom {
+  margin-bottom: var(--spacing-bottom);
+}

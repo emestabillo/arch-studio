@@ -1,0 +1,52 @@
+@use "../../styles/abstracts/index" as *;
+
+.sectionContainer {
+  display: grid;
+  grid-template-areas: "content";
+
+  & > * {
+    grid-area: content;
+  }
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: rem(32px);
+  justify-content: center;
+  height: 100%;
+  padding-inline: rem(32px);
+  width: 100%;
+
+  @include breakpoint(md) {
+    gap: rem(40px);
+    padding-inline: rem(58px);
+  }
+
+  @include breakpoint(lg) {
+    padding-inline: rem(190px);
+  }
+}
+
+.heading {
+  color: var(--clr-white);
+  max-width: 10ch;
+}
+
+.imageContainer {
+  position: relative;
+  z-index: -1;
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    background-color: hsla(0, 0%, 0%, 0.5);
+    top: 0;
+    width: 100%;
+  }
+
+  img {
+    object-fit: cover;
+  }
+}
