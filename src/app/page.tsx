@@ -4,10 +4,27 @@ import ImageWithOverlayText from "@/components/ImageWithOverlayText/ImageWithOve
 import imageSrcMobile from "../../public/images/home/mobile/image-small-team.jpg";
 import imageSrcTablet from "../../public/images/home/tablet/image-small-team.jpg";
 import imageSrcDesktop from "../../public/images/home/desktop/image-small-team.jpg";
+import ProjectCard from "@/components/ProjectCard/ProjectCard";
 
 export default function Home() {
   return (
     <main>
+      <ProjectCard
+        projectTitle="Seraph Station"
+        subHeading="September 2019"
+        imageSrcDesktop={imageSrcDesktop.src}
+        imageSrcTablet={imageSrcTablet.src}
+        imageSrcMobile={imageSrcMobile.src}
+      />
+      <ProjectCard
+        variant="defaultCard"
+        projectTitle="Project Del Sol"
+        ctaLinkText="View all projects"
+        ctaLinkUrl="/projects"
+        imageSrcDesktop={imageSrcDesktop.src}
+        imageSrcTablet={imageSrcTablet.src}
+        imageSrcMobile={imageSrcMobile.src}
+      />
       <h1 className="screenReaderOnly">Welcome</h1>
       <ImageWithOverlayText
         variant={"sliderItem"}

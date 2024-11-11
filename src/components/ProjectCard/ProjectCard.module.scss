@@ -1,0 +1,69 @@
+@use "../../styles/abstracts/index" as *;
+
+.card {
+  display: grid;
+  grid-template-areas: "content";
+
+  > * {
+    grid-area: content;
+  }
+}
+
+.number {
+  position: relative;
+  counter-increment: step-counter;
+  font-size: 16px;
+
+  &::before {
+    color: red;
+    content: counter(step-counter);
+    font-size: 35px;
+    position: absolute;
+    // right: 0;
+  }
+}
+
+.textContainer {
+  color: var(--clr-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: rem(24px);
+  padding-left: rem(24px);
+
+  @include breakpoint(sm) {
+    padding-bottom: rem(40px);
+    padding-left: rem(40px);
+  }
+}
+
+.cardHeading {
+  color: inherit;
+  font-size: rem(18px);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.cardSubheading {
+}
+
+.ctaLink {
+  color: inherit;
+  text-transform: capitalize;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: 0.2s ease;
+
+  &:hover {
+    text-decoration-color: currentColor;
+  }
+}
+
+.imageContainer {
+  position: relative;
+  z-index: -1;
+
+  img {
+    object-fit: cover;
+  }
+}
