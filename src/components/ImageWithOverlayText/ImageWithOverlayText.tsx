@@ -4,7 +4,9 @@ import styles from "./ImageWithOverlayText.module.scss";
 import arrow from "../../../public/icons/icon-arrow.svg";
 
 interface ImageWithOverlayTextProps {
+  variant?: "default" | "sliderItem";
   heading: string;
+  paragraph?: string;
   ctaText: string;
   imageSrcDesktop: string;
   imageSrcTablet: string;
@@ -12,7 +14,9 @@ interface ImageWithOverlayTextProps {
 }
 
 function ImageWithOverlayText({
+  variant = "default",
   heading,
+  paragraph,
   ctaText,
   imageSrcDesktop,
   imageSrcTablet,
@@ -23,17 +27,32 @@ function ImageWithOverlayText({
       className={`${styles.sectionContainer} container spacing-top spacing-bottom`}
     >
       <div className={styles.textContainer}>
-        <h2 className={styles.heading}>{heading}</h2>
+        <h2
+          className={`${styles.heading} ${
+            variant === "sliderItem" ? styles.sliderHeading : ""
+          }`}
+        >
+          {heading}
+        </h2>
+        {paragraph && <p className={styles.paragraph}>{paragraph}</p>}
         <Button text={ctaText} icon={arrow} />
       </div>
-      <div className={styles.imageContainer}>
+      <div
+        className={`${styles.imageContainer} ${
+          variant === "sliderItem" ? styles.lightOverlay : ""
+        }`}
+      >
         <picture>
           <source srcSet={imageSrcMobile} media="(max-width: 767px)" />
           <source
             srcSet={imageSrcTablet}
             media="(min-width: 768px) and (max-width: 1023px)"
           />
-          <Image src={imageSrcDesktop} alt="" width={1110} height={560} />
+          {variant === "sliderItem" ? (
+            <Image src={imageSrcDesktop} alt="" width={1110} height={720} />
+          ) : (
+            <Image src={imageSrcDesktop} alt="" width={1110} height={560} />
+          )}
         </picture>
       </div>
     </section>

@@ -10,6 +10,15 @@ export default function Home() {
     <main>
       <h1 className="screenReaderOnly">Welcome</h1>
       <ImageWithOverlayText
+        variant={"sliderItem"}
+        imageSrcDesktop={imageSrcDesktop.src}
+        imageSrcTablet={imageSrcTablet.src}
+        imageSrcMobile={imageSrcMobile.src}
+        heading="Small team, big ideas"
+        paragraph="Project made for an art museum near Southwest London. Project Paramour is a statement of bold, modern architecture."
+        ctaText="about us"
+      />
+      <ImageWithOverlayText
         imageSrcDesktop={imageSrcDesktop.src}
         imageSrcTablet={imageSrcTablet.src}
         imageSrcMobile={imageSrcMobile.src}
