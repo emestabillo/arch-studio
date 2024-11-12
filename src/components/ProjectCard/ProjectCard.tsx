@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import { getImageProps } from "next/image";
 import styles from "./ProjectCard.module.scss";
 
 interface ProjectCardProps {
@@ -22,7 +22,28 @@ export default function ProjectCard({
   imageSrcDesktop,
   imageSrcTablet,
   imageSrcMobile,
+  ...rest
 }: ProjectCardProps) {
+  const common = { alt: "", sizes: "100vw" };
+  const {
+    props: { srcSet: desktop },
+  } = getImageProps({
+    ...common,
+    width: 350,
+    height: 560,
+    // quality: 80,
+    src: imageSrcDesktop,
+  });
+  const {
+    props: { srcSet: tablet },
+  } = getImageProps({
+    ...common,
+    width: 573,
+    height: 300,
+    // quality: 70,
+    src: imageSrcTablet,
+  });
+
   return (
     <li
       className={`${styles.card} ${
@@ -30,25 +51,33 @@ export default function ProjectCard({
       }`}
     >
       <div className={styles.textContainer}>
-        <h2 className={styles.cardHeading}>{projectTitle}</h2>
-        {variant === "defaultCard" && ctaLinkUrl && (
+        {variant === "defaultCard" ? (
+          <h2 className={styles.heading}>
+            <Link href="/portfolio">{projectTitle}</Link>
+          </h2>
+        ) : (
+          <h2 className={styles.heading}>{projectTitle}</h2>
+        )}
+
+        {variant === "numberedCard" && ctaLinkUrl && (
           <Link className={styles.ctaLink} href={ctaLinkUrl}>
             {ctaLinkText}
           </Link>
         )}
-        {variant === "numberedCard" && (
-          <p className={styles.cardSubheading}>{subHeading}</p>
+        {variant === "defaultCard" && (
+          <p className={styles.subheading}>{subHeading}</p>
         )}
       </div>
       <div className={styles.imageContainer}>
         <picture>
-          <source srcSet={imageSrcMobile} media="(max-width: 767px)" />
-          <source
-            srcSet={imageSrcTablet}
-            media="(min-width: 768px) and (max-width: 1023px)"
+          <source media="(min-width: 1024px)" srcSet={desktop} />
+          <source media="(min-width: 500px)" srcSet={tablet} />
+          <img
+            alt=""
+            {...rest}
+            src={imageSrcMobile}
+            style={{ width: "100%", height: "auto" }}
           />
-
-          <Image src={imageSrcDesktop} alt="" width={350} height={560} />
         </picture>
       </div>
     </li>

@@ -9,7 +9,7 @@ export type NavlinksProps = {
 export const Navlinks = [
   {
     name: "portfolio",
-    route: "/Portfolio",
+    route: "/portfolio",
   },
   {
     name: "about us",
