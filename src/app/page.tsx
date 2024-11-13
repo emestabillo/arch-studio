@@ -20,9 +20,9 @@ export default function Home() {
         ctaText="about us"
       />
 
-      <section className={`container ${styles.featuredGrid}`}>
+      <section className={`container ${styles.featuredSection}`}>
         <h2>Featured</h2>
-        <ul>
+        <ul className={styles.featuredCardsContainer}>
           {projectList
             .filter((project) => project.featured)
             .map((project) => (
@@ -39,7 +39,12 @@ export default function Home() {
               />
             ))}
         </ul>
-        <Button text="See all" icon={arrow} href="/portfolio" />
+        <Button
+          text="See all"
+          icon={arrow}
+          href="/portfolio"
+          otherClass={styles.featuredButton}
+        />
       </section>
       {/* <ProjectCard
         projectTitle="Seraph Station"

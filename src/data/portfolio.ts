@@ -29,20 +29,21 @@ export const projectList = [
     imageSrcMobile: "/images/portfolio/mobile/image-del-sol.jpg",
     featured: true,
   },
-  {
-    projectTitle: "Le Prototype",
-    subHeading: "October 2015",
-    imageSrcDesktop: "/images/portfolio/desktop/image-prototype.jpg",
-    imageSrcTablet: "/images/portfolio/tablet/image-prototype.jpg",
-    imageSrcMobile: "/images/portfolio/mobile/image-prototype.jpg",
-    featured: true,
-  },
+
   {
     projectTitle: "228B Tower",
     subHeading: "April 2015",
     imageSrcDesktop: "/images/portfolio/desktop/image-228b.jpg",
     imageSrcTablet: "/images/portfolio/tablet/image-228b.jpg",
     imageSrcMobile: "/images/portfolio/mobile/image-228b.jpg",
+    featured: true,
+  },
+  {
+    projectTitle: "Le Prototype",
+    subHeading: "October 2015",
+    imageSrcDesktop: "/images/portfolio/desktop/image-prototype.jpg",
+    imageSrcTablet: "/images/portfolio/tablet/image-prototype.jpg",
+    imageSrcMobile: "/images/portfolio/mobile/image-prototype.jpg",
     featured: true,
   },
   {

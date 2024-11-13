@@ -52,11 +52,11 @@ export default function ProjectCard({
     >
       <div className={styles.textContainer}>
         {variant === "defaultCard" ? (
-          <h2 className={styles.heading}>
+          <h3 className={styles.heading}>
             <Link href="/portfolio">{projectTitle}</Link>
-          </h2>
+          </h3>
         ) : (
-          <h2 className={styles.heading}>{projectTitle}</h2>
+          <h3 className={styles.heading}>{projectTitle}</h3>
         )}
 
         {variant === "numberedCard" && ctaLinkUrl && (

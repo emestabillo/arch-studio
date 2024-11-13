@@ -8,6 +8,7 @@ type ButtonProps = {
   variant?: "primary" | "light";
   icon?: string;
   alt?: string;
+  otherClass?: string;
   // onClick: () => void;
 };
 
@@ -17,10 +18,14 @@ function Button({
   variant = "primary",
   icon,
   alt = "",
+  otherClass,
 }: ButtonProps) {
   if (href) {
     return (
-      <Link href={href} className={`${styles.btn} ${styles[variant]}`}>
+      <Link
+        href={href}
+        className={`${styles.btn} ${styles[variant]} ${otherClass}`}
+      >
         {text} {icon && <Image src={icon} alt={alt} />}
       </Link>
     );
