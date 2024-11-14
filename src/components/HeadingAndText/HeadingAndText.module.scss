@@ -1,0 +1,59 @@
+@use "../../styles/abstracts/index" as *;
+
+.mainWrapper {
+  position: relative;
+
+  @include breakpoint(md) {
+    display: flex;
+    gap: 15%;
+
+    > * {
+      flex: 1;
+    }
+  }
+}
+
+.textContainer {
+  padding-top: rem(67px);
+
+  @include breakpoint(md) {
+    align-self: flex-end;
+    padding-top: rem(74px);
+  }
+}
+
+.shortHeading {
+  max-width: 8ch;
+}
+
+.mediumHeading {
+  max-width: 10ch;
+}
+
+.paragraph {
+  padding-top: rem(30px);
+
+  &:not(:first-of-type) {
+    padding-top: rem(20px);
+  }
+
+  @include breakpoint(sm) {
+    padding-top: rem(56px);
+  }
+}
+
+.imageContainer {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+
+  @include breakpoint(md) {
+    position: unset;
+    z-index: unset;
+    opacity: 1;
+  }
+
+  img {
+    object-fit: cover;
+  }
+}

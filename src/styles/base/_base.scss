@@ -10,12 +10,12 @@
   --clr-red: hsl(0, 68%, 61%); //#DF5656
   --clr-white: hsl(0, 0%, 100%);
 
-  --spacing-top: #{rem(36px)};
-  --spacing-bottom: #{rem(36px)};
+  --top-spacing: #{rem(36px)};
+  --bottom-spacing: #{rem(36px)};
 
   @include breakpoint(sm) {
-    --spacing-top: #{rem(100px)};
-    --spacing-bottom: #{rem(100px)};
+    --top-spacing: #{rem(100px)};
+    --bottom-spacing: #{rem(100px)};
   }
 }
 
