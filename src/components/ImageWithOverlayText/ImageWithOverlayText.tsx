@@ -23,9 +23,7 @@ function ImageWithOverlayText({
   imageSrcMobile,
 }: ImageWithOverlayTextProps) {
   return (
-    <section
-      className={`${styles.sectionContainer} container spacing-top spacing-bottom`}
-    >
+    <div className={`${styles.sectionContainer}`}>
       <div className={styles.textContainer}>
         <h2
           className={`${styles.heading} ${
@@ -55,7 +53,7 @@ function ImageWithOverlayText({
           )}
         </picture>
       </div>
-    </section>
+    </div>
   );
 }
 

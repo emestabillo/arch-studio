@@ -12,14 +12,15 @@ import styles from "./home.module.scss";
 export default function Home() {
   return (
     <main>
-      <ImageWithOverlayText
-        imageSrcDesktop={imageSrcDesktop.src}
-        imageSrcTablet={imageSrcTablet.src}
-        imageSrcMobile={imageSrcMobile.src}
-        heading="Small team, big ideas"
-        ctaText="about us"
-      />
-
+      <section className="container spacing-top spacing-bottom">
+        <ImageWithOverlayText
+          imageSrcDesktop={imageSrcDesktop.src}
+          imageSrcTablet={imageSrcTablet.src}
+          imageSrcMobile={imageSrcMobile.src}
+          heading="Small team, big ideas"
+          ctaText="about us"
+        />
+      </section>
       <section className={`container ${styles.featuredSection}`}>
         <h2>Featured</h2>
         <ul className={styles.featuredCardsContainer}>
