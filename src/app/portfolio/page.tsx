@@ -5,9 +5,9 @@ import styles from "./portfolio.module.scss";
 export default function portfolio() {
   return (
     <ul className={`container ${styles.grid}`}>
-      {projectList.map((project, index) => (
+      {projectList.map((project) => (
         <ProjectCard
-          key={index}
+          key={project.projectTitle}
           variant="defaultCard"
           projectTitle={project.projectTitle}
           subHeading={project.subHeading}

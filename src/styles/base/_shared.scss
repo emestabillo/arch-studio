@@ -31,6 +31,14 @@
   padding-bottom: var(--bottom-spacing);
 }
 
+.shortHeading {
+  max-width: 8ch;
+}
+
+.mediumHeading {
+  max-width: 10ch;
+}
+
 .decorativeLine {
   position: relative;
 

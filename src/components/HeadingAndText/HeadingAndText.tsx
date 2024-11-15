@@ -1,12 +1,12 @@
 import styles from "./HeadingAndText.module.scss";
 import Image from "next/image";
 
-type HeadingAndTextProps = {
+interface HeadingAndTextProps {
   heading: string;
   headingVariant?: string;
   paragraphs: string[];
   imgSrc: string;
-};
+}
 
 export default function HeadingAndText({
   heading,
@@ -21,9 +21,7 @@ export default function HeadingAndText({
       <div className={styles.textContainer}>
         <h2
           className={`${styles.heading} ${
-            headingVariant === "short"
-              ? styles.shortHeading
-              : styles.mediumHeading
+            headingVariant === "short" ? "shortHeading" : "mediumHeading"
           }`}
         >
           {heading}
