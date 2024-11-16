@@ -7,7 +7,7 @@
 
     @include breakpoint(md) {
       grid-template-areas: unset;
-      grid-template-columns: 55% 1fr;
+      grid-template-columns: 60% 1fr;
     }
 
     > * {
@@ -15,7 +15,6 @@
 
       @include breakpoint(md) {
         grid-area: unset;
-        // grid-template-columns: 55% 1fr;
       }
     }
   }
@@ -25,10 +24,6 @@
   max-height: rem(720px);
   position: relative;
   z-index: -1;
-
-  @include breakpoint(md) {
-    // max-width: 55%;
-  }
 
   &::before {
     background-color: hsla(0, 0%, 0%, 0.35);
@@ -49,15 +44,89 @@
 }
 
 .textContainer {
-  @include breakpoint(md) {
-    transform: translateX(-100px);
-    background-color: white;
-    margin-top: auto;
+  @include breakpoint(sm) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
   }
 }
 
-.heading {
+.largeHeading {
+  position: absolute;
+  opacity: 0;
+
+  @include breakpoint(sm) {
+    opacity: 1;
+    position: relative;
+    transform: translateY(rem(10px));
+    z-index: 2;
+  }
+
   @include breakpoint(md) {
-    transform: translateY(-100px);
+    position: absolute;
+    transform: translateY(rem(-400px));
+  }
+}
+
+.subtext {
+  background-color: var(--clr-white);
+  padding-top: rem(35px);
+  position: relative;
+
+  @include breakpoint(sm) {
+    max-width: 75%;
+    margin-left: auto;
+    padding-left: 10%;
+    padding-top: rem(89px);
+  }
+
+  @include breakpoint(md) {
+    max-width: rem(456px);
+    padding-left: 10%;
+    transform: translateX(-100px);
+  }
+
+  &::before {
+    content: unset;
+
+    @include breakpoint(sm) {
+      content: "";
+    }
+  }
+
+  &::after {
+    background-color: var(--clr-white);
+    content: "";
+    height: rem(45px);
+    left: 0;
+    position: absolute;
+    top: rem(-45px);
+    width: 90%;
+
+    @include breakpoint(sm) {
+      width: 100%;
+    }
+  }
+
+  h2 {
+    max-width: 12ch;
+    padding-bottom: rem(30px);
+
+    @include breakpoint(sm) {
+      padding-top: rem(74px);
+    }
+
+    @include breakpoint(lg) {
+      transform: translateX(25%);
+    }
+  }
+
+  p {
+    max-width: 95%;
+
+    @include breakpoint(lg) {
+      transform: translateX(25%);
+    }
   }
 }

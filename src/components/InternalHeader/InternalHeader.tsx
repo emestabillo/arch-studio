@@ -40,7 +40,7 @@ export default function InternalHeader({
   });
 
   return (
-    <section className={`container ${styles.mainWrrapper}`}>
+    <section className={`container  bottom-spacing ${styles.mainWrrapper}`}>
       <div className={styles.imageContainer}>
         <picture>
           <source media="(min-width: 64em)" srcSet={desktop} />
@@ -54,8 +54,8 @@ export default function InternalHeader({
         </picture>
       </div>
       <div className={styles.textContainer}>
-        <h1 className={styles.heading}>{heading}</h1>
-        <div>
+        <h1 className={styles.largeHeading}>{heading}</h1>
+        <div className={`${styles.subtext} decorativeLine`}>
           <h2>{subheading}</h2>
           <p>{paragraph}</p>
         </div>
