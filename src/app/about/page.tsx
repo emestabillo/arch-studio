@@ -3,10 +3,22 @@ import imageHeritage from "../../../public/images/about/desktop/image-heritage.j
 import TeamCard from "@/components/TeamCard/TeamCard";
 import { teamMembers } from "@/data/team";
 import styles from "./about.module.scss";
+import InternalHeader from "@/components/InternalHeader/InternalHeader";
+import heroImageDesktop from "../../../public/images/about/desktop/image-hero.jpg";
+import heroImageTablet from "../../../public/images/about/tablet/image-hero.jpg";
+import heroImageMobile from "../../../public/images/about/mobile/image-hero.jpg";
 
 export default function page() {
   return (
-    <div>
+    <main>
+      <InternalHeader
+        heading="About"
+        subheading="Your team of professionals"
+        paragraph="Our small team of world-class professionals will work with you every step of the way. Strong relationships are at the core of everything we do. This extends to the relationship our projects have with their surroundings."
+        imageSrcDesktop={heroImageDesktop.src}
+        imageSrcTablet={heroImageTablet.src}
+        imageSrcMobile={heroImageMobile.src}
+      />
       <HeadingAndText
         heading="Our Heritage"
         headingVariant="short"
@@ -36,6 +48,6 @@ export default function page() {
           ))}
         </div>
       </section>
-    </div>
+    </main>
   );
 }

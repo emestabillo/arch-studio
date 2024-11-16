@@ -1,0 +1,63 @@
+@use "../../styles/abstracts/index" as *;
+
+.mainWrrapper {
+  @include breakpoint(sm) {
+    display: grid;
+    grid-template-areas: "content";
+
+    @include breakpoint(md) {
+      grid-template-areas: unset;
+      grid-template-columns: 55% 1fr;
+    }
+
+    > * {
+      grid-area: content;
+
+      @include breakpoint(md) {
+        grid-area: unset;
+        // grid-template-columns: 55% 1fr;
+      }
+    }
+  }
+}
+
+.imageContainer {
+  max-height: rem(720px);
+  position: relative;
+  z-index: -1;
+
+  @include breakpoint(md) {
+    // max-width: 55%;
+  }
+
+  &::before {
+    background-color: hsla(0, 0%, 0%, 0.35);
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+
+  picture,
+  img {
+    height: 100% !important;
+  }
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.textContainer {
+  @include breakpoint(md) {
+    transform: translateX(-100px);
+    background-color: white;
+    margin-top: auto;
+  }
+}
+
+.heading {
+  @include breakpoint(md) {
+    transform: translateY(-100px);
+  }
+}
