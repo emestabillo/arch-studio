@@ -16,7 +16,7 @@ function contact() {
         imageSrcTablet={heroImageTablet.src}
         imageSrcMobile={heroImageMobile.src}
       />
-      <section className={`top-spacing bottom-spacing`}>
+      <section className={`top-spacing bottom-spacing ${styles.mainWrapper}`}>
         <div className={`container decorativeLine ${styles.contentWrapper}`}>
           <h2>Contact Details</h2>
           <div className={styles.detailsGrid}>

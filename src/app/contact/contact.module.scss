@@ -1,5 +1,11 @@
 @use "../../styles/abstracts/index" as *;
 
+.mainWrapper {
+  @include breakpoint(sm) {
+    --top-spacing: #{rem(74px)};
+  }
+}
+
 .contentWrapper {
   &::before {
     top: rem(-74px);

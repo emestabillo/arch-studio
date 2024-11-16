@@ -4,6 +4,7 @@
   --bottom-spacing: #{rem(100px)};
 
   @include breakpoint(sm) {
+    --bottom-spacing: #{rem(200px)};
     display: grid;
     grid-template-areas: "content";
 
