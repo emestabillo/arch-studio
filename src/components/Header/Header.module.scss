@@ -9,6 +9,7 @@
   @include breakpoint(sm) {
     justify-content: unset;
     gap: min(10%, rem(95px));
+    padding-block: rem(56px);
   }
 }
 

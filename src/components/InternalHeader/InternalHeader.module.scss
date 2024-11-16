@@ -67,6 +67,10 @@
     position: absolute;
     transform: translateY(rem(-400px));
   }
+
+  @include breakpoint(xl) {
+    transform: translate(1rem, rem(-416px));
+  }
 }
 
 .subtext {
@@ -83,7 +87,6 @@
 
   @include breakpoint(md) {
     max-width: rem(456px);
-    padding-left: 10%;
     transform: translateX(-100px);
   }
 
