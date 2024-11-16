@@ -40,7 +40,7 @@ export default function InternalHeader({
   });
 
   return (
-    <section className={`container  bottom-spacing ${styles.mainWrrapper}`}>
+    <section className={`container bottom-spacing ${styles.mainWrrapper}`}>
       <div className={styles.imageContainer}>
         <picture>
           <source media="(min-width: 64em)" srcSet={desktop} />

@@ -1,6 +1,8 @@
 @use "../../styles/abstracts/index" as *;
 
 .mainWrrapper {
+  --bottom-spacing: #{rem(100px)};
+
   @include breakpoint(sm) {
     display: grid;
     grid-template-areas: "content";

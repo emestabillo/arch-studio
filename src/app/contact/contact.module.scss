@@ -1,0 +1,30 @@
+@use "../../styles/abstracts/index" as *;
+
+.contentWrapper {
+  &::before {
+    top: rem(-74px);
+  }
+  @include breakpoint(md) {
+    display: flex;
+    gap: 8%;
+  }
+
+  h2 {
+    padding-bottom: rem(48px);
+
+    @include breakpoint(md) {
+      flex-basis: 30%;
+    }
+  }
+}
+
+.detailsGrid {
+  display: grid;
+  gap: rem(48px);
+
+  @include breakpoint(md) {
+    // gap: 20%;
+    flex: 1;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
