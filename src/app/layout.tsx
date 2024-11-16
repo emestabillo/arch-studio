@@ -1,14 +1,22 @@
 import type { Metadata } from "next";
-import { League_Spartan } from "next/font/google";
 import "./global.scss";
 import Header from "@/components/Header/Header";
 import { Navlinks } from "@/shared/Navlinks";
 import Footer from "@/components/Footer/Footer";
+import localFont from "next/font/local";
 
-const spartan = League_Spartan({
-  subsets: ["latin"],
+const spartan = localFont({
+  src: [
+    {
+      path: "../../public/fonts/Spartan-Medium.ttf",
+      weight: "400",
+    },
+    {
+      path: "../../public/fonts/Spartan-Bold.ttf",
+      weight: "700",
+    },
+  ],
   variable: "--ff-spartan",
-  display: "swap",
 });
 
 export const metadata: Metadata = {
