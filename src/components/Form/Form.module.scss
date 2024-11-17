@@ -1,0 +1,96 @@
+@use "../../styles/abstracts/index" as *;
+
+.form {
+  @include breakpoint(md) {
+    flex: 1;
+  }
+
+  button {
+    margin-left: auto;
+    transform: translateY(-9px);
+    @include breakpoint(md) {
+    }
+  }
+}
+
+.formField {
+  position: relative;
+
+  &::after {
+    bottom: 0;
+    background-color: var(--clr-dark-blue);
+    content: "";
+    height: 3px;
+    left: 0;
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+  }
+
+  &:has(textarea) {
+    &::after {
+      bottom: 5px;
+    }
+  }
+
+  &:has(input:focus, textarea:focus) {
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &:has(.errorText) {
+    label {
+      color: var(--clr-red);
+      opacity: 0.5;
+    }
+  }
+
+  label {
+    color: var(--clr-light-gray);
+    font-weight: 700;
+    letter-spacing: -0.016em;
+    position: absolute;
+    left: rem(35px);
+    top: rem(40px);
+
+    &.active {
+      opacity: 0;
+    }
+  }
+
+  input,
+  textarea {
+    color: var(--clr-dark-blue);
+    font-weight: 700;
+    border: none;
+    border-bottom: 1px solid;
+    padding-block: rem(40px) rem(24px);
+    padding-left: rem(35px);
+    width: 100%;
+
+    // &:focus {
+    //   outline-width: 0;
+    // }
+
+    // &:focus-visible {
+    //   outline: 1px solid red;
+    // }
+
+    &.error {
+      border-bottom-color: var(--clr-red);
+    }
+  }
+
+  textarea {
+    resize: none;
+  }
+}
+
+.errorText {
+  color: var(--clr-red);
+  font-weight: 700;
+  inset-block: rem(40px) rem(24px);
+  position: absolute;
+  right: 0;
+}

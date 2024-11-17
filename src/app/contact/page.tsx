@@ -1,4 +1,5 @@
 import InternalHeader from "@/components/InternalHeader/InternalHeader";
+import ContactForm from "@/components/Form/Form";
 import heroImageDesktop from "../../../public/images/contact/desktop/image-hero.jpg";
 import heroImageTablet from "../../../public/images/contact/tablet/image-hero.jpg";
 import heroImageMobile from "../../../public/images/contact/mobile/image-hero.jpg";
@@ -33,6 +34,12 @@ function contact() {
               phone="832-123-4321"
             />
           </div>
+        </div>
+      </section>
+      <section className={`top-spacing bottom-spacing ${styles.mainContainer}`}>
+        <div className={`container ${styles.contentWrapper}`}>
+          <h2>Connect with us</h2>
+          <ContactForm />
         </div>
       </section>
     </main>

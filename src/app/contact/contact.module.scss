@@ -1,6 +1,6 @@
 @use "../../styles/abstracts/index" as *;
 
-.mainWrapper {
+.mainContainer {
   @include breakpoint(sm) {
     --top-spacing: #{rem(74px)};
   }
@@ -10,6 +10,7 @@
   &::before {
     top: rem(-74px);
   }
+
   @include breakpoint(md) {
     display: flex;
     gap: 8%;
@@ -29,7 +30,6 @@
   gap: rem(48px);
 
   @include breakpoint(md) {
-    // gap: 20%;
     flex: 1;
     grid-template-columns: repeat(2, 1fr);
   }
