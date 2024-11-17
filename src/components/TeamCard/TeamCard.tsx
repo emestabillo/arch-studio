@@ -27,12 +27,12 @@ export default function TeamCard({
       <h3 className={styles.title}>{name}</h3>
       <p>{title}</p>
       <div className={styles.socialIcons}>
-        <Link href={linkedInLink}>
+        <Link href={linkedInLink} target="_blank">
           <span>
             <Image src={linkedInIcon} width={32} height={32} alt="" />
           </span>
         </Link>
-        <Link href={twitterLink}>
+        <Link href={twitterLink} target="_blank">
           <span>
             <Image src={twitterIcon} width={32} height={26} alt="" />
           </span>

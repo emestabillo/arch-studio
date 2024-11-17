@@ -15,8 +15,13 @@ h2 {
 
 h1 {
   color: var(--clr-very-light-gray);
-  font-size: rem(120px);
+  font-size: 1rem;
   letter-spacing: -0.025em;
+
+  @include mixin.breakpoint(sm) {
+    font-size: rem(120px);
+    letter-spacing: -0.025em;
+  }
 
   @include mixin.breakpoint(md) {
     font-size: rem(160px);

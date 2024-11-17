@@ -1,12 +1,12 @@
 @use "../../styles/abstracts/index" as *;
 
 .mainWrrapper {
-  --bottom-spacing: #{rem(100px)};
+  padding-bottom: rem(100px);
 
   @include breakpoint(sm) {
-    --bottom-spacing: #{rem(200px)};
     display: grid;
     grid-template-areas: "content";
+    padding-bottom: rem(200px);
 
     @include breakpoint(md) {
       grid-template-areas: unset;

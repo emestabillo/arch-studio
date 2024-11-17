@@ -34,3 +34,10 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+.mapWrapper {
+  --width: 100%;
+  @include breakpoint(sm) {
+    --width: 90%;
+  }
+}

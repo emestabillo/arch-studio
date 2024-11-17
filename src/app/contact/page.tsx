@@ -5,6 +5,7 @@ import heroImageTablet from "../../../public/images/contact/tablet/image-hero.jp
 import heroImageMobile from "../../../public/images/contact/mobile/image-hero.jpg";
 import styles from "./contact.module.scss";
 import ContactCard from "@/components/ContactCard/ContactCard";
+import Map from "@/components/Map/Map";
 
 function contact() {
   return (
@@ -24,17 +25,22 @@ function contact() {
             <ContactCard
               office="Main Office"
               mail="archone@mail.com"
-              address="1892 Chenoweth Drive TN"
+              address="111 8th Ave, New York, NY 10011"
               phone="123-456-3451"
             />
             <ContactCard
               office="Office II"
               mail="archone@mail.com"
-              address="3399 Wines Lane TX"
+              address="550 Washington St, New York, NY 10282"
               phone="832-123-4321"
             />
           </div>
         </div>
+      </section>
+      <section
+        className={`top-spacing bottom-spacing container ${styles.mapWrapper}`}
+      >
+        <Map />
       </section>
       <section className={`top-spacing bottom-spacing ${styles.mainContainer}`}>
         <div className={`container ${styles.contentWrapper}`}>
