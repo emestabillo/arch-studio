@@ -1,92 +1,77 @@
 "use client";
-import { useState } from "react";
-// import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+
 import {
   GoogleMap,
   useJsApiLoader,
   Marker,
   InfoWindow,
 } from "@react-google-maps/api";
+import styles from "./Map.module.scss";
 import Loader from "./Loader";
-import markerIcon from "../../../public/icons/icon-marker.svg";
 
-const containerStyle = {
+const mapContainerStyle = {
   width: "100%",
-  height: "35rem",
+  height: "560px",
 };
 
-const center = {
-  lat: 40.736706,
-  lng: -74.00578,
-};
+interface Location {
+  lat: number;
+  lng: number;
+  title: string;
+  address: string;
+  phone: string;
+}
 
-const markerPositions = [
-  {
-    lat: 40.7418638,
-    lng: -74.0046272,
-    title: "Main Office",
-    address: "111 8th Ave, New York, NY 10011",
-    phone: "931-492-3451",
-  },
-  {
-    lat: 40.7282701,
-    lng: -74.0072199,
-    title: "Office II",
-    address: "550 Washington St, New York, NY 10282",
-    phone: "931-492-3451",
-  },
-];
+interface MapProps {
+  locations: Location[];
+  center: { lat: number; lng: number };
+  onMapLoad: (map: google.maps.Map) => void;
+  activeMarker: number | null;
+  onMarkerClick: (index: number) => void;
+}
 
-const marker = {
-  url: markerIcon.src,
-};
-
-export default function Map() {
-  const [activeMarker, setActiveMarker] = useState<null | number>(null);
-
-  const handleMouseOver = (index: number) => {
-    setActiveMarker(index);
-  };
-
-  const handleMouseOut = () => {
-    setActiveMarker(null);
-  };
-
+export default function Map({
+  locations,
+  center,
+  onMapLoad,
+  activeMarker,
+  onMarkerClick,
+}: MapProps) {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
   });
 
-  return isLoaded ? (
-    <GoogleMap
-      mapContainerStyle={containerStyle}
-      center={center}
-      zoom={14}
-      //  onLoad={onLoad}
-      //  onUnmount={onUnmount}
+  if (!isLoaded) return <Loader />;
+
+  return (
+    <div
+      className={`top-spacing bottom-spacing container ${styles.mapWrapper}`}
     >
-      {markerPositions.map((position, index) => (
-        <Marker
-          key={index}
-          position={position}
-          icon={marker}
-          onMouseOver={() => handleMouseOver(index)}
-          onMouseOut={handleMouseOut}
-        >
-          {activeMarker === index && (
-            <InfoWindow position={position} onCloseClick={handleMouseOut}>
-              <div>
-                <h3>{position.title}</h3>
-                <p>{position.address}</p>
-                <p>{position.phone}</p>
-              </div>
-            </InfoWindow>
-          )}
-        </Marker>
-      ))}
-      <></>
-    </GoogleMap>
-  ) : (
-    <Loader />
+      <GoogleMap
+        mapContainerStyle={mapContainerStyle}
+        center={center}
+        zoom={14}
+        onLoad={onMapLoad}
+      >
+        {locations.map((location, index) => (
+          <Marker
+            key={index}
+            position={{ lat: location.lat, lng: location.lng }}
+            onClick={() => onMarkerClick(index)}
+          >
+            {activeMarker === index && (
+              <InfoWindow onCloseClick={() => onMarkerClick(index)}>
+                <div>
+                  <h3>{location.title}</h3>
+                  <p>{location.address}</p>
+                  <p>{location.phone}</p>
+                </div>
+              </InfoWindow>
+            )}
+          </Marker>
+        ))}
+      </GoogleMap>
+    </div>
   );
 }

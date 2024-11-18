@@ -63,9 +63,8 @@ export default function ContactForm() {
       [name]: value,
     }));
   };
-  //   // Handle form submission logic here
   //   console.log("Form data:", Object.fromEntries(formData.entries()));
-  // };
+
   return (
     <form onSubmit={handleSubmit} noValidate className={styles.form}>
       <div className={styles.formField}>
