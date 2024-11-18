@@ -4,8 +4,9 @@ import heroImageDesktop from "../../../public/images/contact/desktop/image-hero.
 import heroImageTablet from "../../../public/images/contact/tablet/image-hero.jpg";
 import heroImageMobile from "../../../public/images/contact/mobile/image-hero.jpg";
 import styles from "./contact.module.scss";
-import ContactCard from "@/components/ContactCard/ContactCard";
-import Map from "@/components/Map/Map";
+// import ContactCard from "@/components/ContactCard/ContactCard";
+import MapContactSection from "@/components/Map/Map";
+// import { MapProvider } from "../context/MapContext";
 
 function contact() {
   return (
@@ -18,29 +19,8 @@ function contact() {
         imageSrcTablet={heroImageTablet.src}
         imageSrcMobile={heroImageMobile.src}
       />
-      <section className={`top-spacing bottom-spacing ${styles.mainWrapper}`}>
-        <div className={`container decorativeLine ${styles.contentWrapper}`}>
-          <h2>Contact Details</h2>
-          <div className={styles.detailsGrid}>
-            <ContactCard
-              office="Main Office"
-              mail="archone@mail.com"
-              address="111 8th Ave, New York, NY 10011"
-              phone="123-456-3451"
-            />
-            <ContactCard
-              office="Office II"
-              mail="archone@mail.com"
-              address="550 Washington St, New York, NY 10282"
-              phone="832-123-4321"
-            />
-          </div>
-        </div>
-      </section>
-      <section
-        className={`top-spacing bottom-spacing container ${styles.mapWrapper}`}
-      >
-        <Map />
+      <section className={`top-spacing ${styles.mainWrapper}`}>
+        <MapContactSection />
       </section>
       <section className={`top-spacing bottom-spacing ${styles.mainContainer}`}>
         <div className={`container ${styles.contentWrapper}`}>
