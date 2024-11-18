@@ -6,16 +6,6 @@
   height: rem(560px);
 }
 
-.detailsGrid {
-  display: grid;
-  gap: rem(48px);
-
-  @include breakpoint(md) {
-    flex: 1;
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 .mapWrapper {
   --width: 100%;
   @include breakpoint(sm) {

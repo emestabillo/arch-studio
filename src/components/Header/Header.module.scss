@@ -55,6 +55,7 @@
     position: initial;
     flex-direction: row;
     background-color: var(--clr-white);
+    overflow: unset;
     width: unset;
     padding: unset;
     gap: rem(32px);

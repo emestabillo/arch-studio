@@ -1,5 +1,5 @@
 "use client";
-// import Link from "next/link";
+
 import styles from "./ContactCard.module.scss";
 import Image from "next/image";
 import arrow from "../../../public/icons/icon-arrow.svg";
@@ -30,7 +30,9 @@ export default function ContactCard({
       <div className={styles.leftColumn}>
         <h3 className={styles.office}>{office}</h3>
         <p className={styles.detail}>Mail: {email}</p>
-        <p className={styles.detail}>Address: {address}</p>
+        <p className={styles.detail}>
+          Address: <span>{address}</span>
+        </p>
         <p className={styles.detail}>Phone: {phone}</p>
       </div>
       <a href="#" onClick={handleViewOnMap} className={styles.link}>

@@ -4,9 +4,7 @@ import heroImageDesktop from "../../../public/images/contact/desktop/image-hero.
 import heroImageTablet from "../../../public/images/contact/tablet/image-hero.jpg";
 import heroImageMobile from "../../../public/images/contact/mobile/image-hero.jpg";
 import styles from "./contact.module.scss";
-// import ContactCard from "@/components/ContactCard/ContactCard";
-import MapContactSection from "@/components/Map/Map";
-// import { MapProvider } from "../context/MapContext";
+import ContactDetailsWithMap from "@/components/ContactDetailsWithMap/ContactDetailsWithMap";
 
 function contact() {
   return (
@@ -19,11 +17,11 @@ function contact() {
         imageSrcTablet={heroImageTablet.src}
         imageSrcMobile={heroImageMobile.src}
       />
-      <section className={`top-spacing ${styles.mainWrapper}`}>
-        <MapContactSection />
+      <section className={`${styles.mainWrapper}`}>
+        <ContactDetailsWithMap />
       </section>
-      <section className={`top-spacing bottom-spacing ${styles.mainContainer}`}>
-        <div className={`container ${styles.contentWrapper}`}>
+      <section className={`top-spacing bottom-spacing ${styles.formSection}`}>
+        <div className={`container ${styles.formContentWrapper}`}>
           <h2>Connect with us</h2>
           <ContactForm />
         </div>
