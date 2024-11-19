@@ -30,6 +30,7 @@ export default function Home() {
           imageSrcMobile={imageSrcMobile.src}
           heading="Small team, big ideas"
           ctaText="about us"
+          href="/about"
         />
       </section>
       <section className={`container ${styles.featuredSection}`}>

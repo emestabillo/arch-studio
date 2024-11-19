@@ -11,6 +11,7 @@ interface ImageWithOverlayTextProps {
   imageSrcDesktop: string;
   imageSrcTablet: string;
   imageSrcMobile: string;
+  href?: string;
 }
 
 function ImageWithOverlayText({
@@ -21,6 +22,7 @@ function ImageWithOverlayText({
   imageSrcDesktop,
   imageSrcTablet,
   imageSrcMobile,
+  href,
 }: ImageWithOverlayTextProps) {
   return (
     <div className={`${styles.sectionContainer}`}>
@@ -33,7 +35,7 @@ function ImageWithOverlayText({
           {heading}
         </h2>
         {paragraph && <p className={styles.paragraph}>{paragraph}</p>}
-        <Button text={ctaText} icon={arrow} />
+        <Button text={ctaText} icon={arrow} href={href} />
       </div>
       <div
         className={`${styles.imageContainer} ${
