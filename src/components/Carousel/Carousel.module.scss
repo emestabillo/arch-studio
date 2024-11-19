@@ -1,0 +1,53 @@
+@use "../Button/Button.module.scss" as btn;
+@use "../../styles/abstracts/index" as *;
+
+.carouselWrapper {
+  position: relative;
+
+  .paginationCustom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+
+    @include breakpoint(lg) {
+      left: rem(-80px);
+    }
+  }
+
+  .bulletButton {
+    @include btn.button-styles;
+    --background-color: var(--clr-white);
+    position: relative;
+    border-radius: 0;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    margin: 0 !important;
+    opacity: 1;
+    z-index: 3;
+    counter-increment: step-counter;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      display: grid;
+      place-items: center;
+      width: 100%;
+      height: 100%;
+      content: "0" counter(step-counter);
+      color: var(--clr-medium-gray);
+    }
+
+    &:hover {
+      --background-color: var(--clr-very-light-gray);
+    }
+  }
+
+  .activeButton {
+    &::before {
+      color: var(--clr-white);
+      background-color: var(--clr-dark-blue);
+    }
+  }
+}

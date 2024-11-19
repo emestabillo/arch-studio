@@ -10,10 +10,12 @@ import Button from "@/components/Button/Button";
 import styles from "./home.module.scss";
 import HeadingAndText from "@/components/HeadingAndText/HeadingAndText";
 import welcomeImage from "../../public/images/home/desktop/image-welcome.jpg";
+import Carousel from "@/components/Carousel/Carousel";
 
 export default function Home() {
   return (
     <main>
+      <Carousel />
       <HeadingAndText
         heading="Welcome to Arch Studio"
         paragraphs={[

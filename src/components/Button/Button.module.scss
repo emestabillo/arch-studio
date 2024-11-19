@@ -1,7 +1,7 @@
 @use "../../styles/abstracts/mixins" as mixin;
 @use "../../styles/abstracts/functions" as *;
 
-.btn {
+@mixin button-styles {
   --transition: 0.2s ease;
   --background-color: var(--clr-dark-blue);
   --text-color: var(--clr-white);
@@ -34,6 +34,10 @@
   &:active {
     --background-color: var(--clr-light-gray);
   }
+}
+
+.btn {
+  @include button-styles;
 }
 
 .light {
