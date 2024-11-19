@@ -75,7 +75,7 @@
 }
 
 .sliderItem {
-  @include breakpoint(md) {
+  @include breakpoint(sm) {
     min-height: rem(720px);
   }
 

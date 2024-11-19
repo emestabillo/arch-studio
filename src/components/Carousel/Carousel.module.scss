@@ -39,7 +39,7 @@
     display: grid;
     place-items: center;
     margin: 0 !important;
-    transition: 0.2s ease;
+    transition: var(--transition);
     z-index: 2;
 
     &:hover {

@@ -2,7 +2,6 @@
 @use "../../styles/abstracts/functions" as *;
 
 @mixin button-styles {
-  --transition: 0.2s ease;
   --background-color: var(--clr-dark-blue);
   --text-color: var(--clr-white);
   background-color: var(--background-color);
@@ -10,7 +9,6 @@
   display: flex;
   align-items: center;
   gap: rem(24px);
-  // font-size: rem(15px);
   font-size: 1rem;
   font-weight: 700;
   line-height: 1;

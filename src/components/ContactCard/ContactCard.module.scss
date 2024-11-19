@@ -35,7 +35,7 @@
   font-weight: 700;
   padding-top: rem(16px);
   text-decoration: underline transparent;
-  transition: text-decoration 0.2s ease;
+  transition: text-decoration var(--transition);
 
   &:hover {
     text-decoration-color: var(--clr-dark-blue);
@@ -49,5 +49,5 @@
 
 .arrow {
   filter: invert(1) brightness(0);
-  transition: 0.2s ease;
+  transition: var(--transition);
 }

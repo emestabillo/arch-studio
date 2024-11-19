@@ -33,7 +33,7 @@
     width: 100%;
     height: rem(320px);
     opacity: 0;
-    transition: 0.2s ease;
+    transition: var(--transition);
 
     &::before {
       position: absolute;
@@ -42,7 +42,7 @@
       content: "";
       height: 100%;
       width: 100%;
-      transition: 0.2s ease;
+      transition: var(--transition);
     }
 
     &:has(a:hover, a:focus) {
@@ -55,7 +55,7 @@
   }
 
   a {
-    transition: 0.2s ease;
+    transition: var(--transition);
 
     @include breakpoint(md) {
       flex: 1;

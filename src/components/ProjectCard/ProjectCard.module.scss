@@ -85,7 +85,7 @@
       inset: 0;
       background-color: var(--clr-white);
       opacity: 0;
-      transition: 0.2s ease;
+      transition: var(--transition);
       z-index: 2;
     }
 
@@ -106,7 +106,7 @@
   text-transform: capitalize;
   text-decoration: underline;
   text-decoration-color: transparent;
-  transition: 0.2s ease;
+  transition: var(--transition);
 
   &:hover {
     text-decoration-color: currentColor;
