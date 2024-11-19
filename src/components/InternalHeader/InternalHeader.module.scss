@@ -8,7 +8,7 @@
     grid-template-areas: "content";
     padding-bottom: rem(200px);
 
-    @include breakpoint(md) {
+    @include breakpoint(lg) {
       grid-template-areas: unset;
       grid-template-columns: 60% 1fr;
     }
@@ -16,7 +16,7 @@
     > * {
       grid-area: content;
 
-      @include breakpoint(md) {
+      @include breakpoint(lg) {
         grid-area: unset;
       }
     }
@@ -66,12 +66,8 @@
     z-index: 2;
   }
 
-  @include breakpoint(md) {
+  @include breakpoint(lg) {
     position: absolute;
-    transform: translateY(rem(-400px));
-  }
-
-  @include breakpoint(xl) {
     transform: translate(1rem, rem(-416px));
   }
 }
@@ -88,7 +84,7 @@
     padding-top: rem(89px);
   }
 
-  @include breakpoint(md) {
+  @include breakpoint(lg) {
     max-width: rem(456px);
     transform: translateX(-100px);
   }

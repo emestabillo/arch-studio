@@ -27,7 +27,7 @@ h1 {
     font-size: rem(160px);
   }
 
-  @include mixin.breakpoint(xl) {
+  @include mixin.breakpoint(lg) {
     font-size: rem(200px);
   }
 }
