@@ -57,6 +57,7 @@
 .imageContainer {
   position: relative;
   z-index: -1;
+  min-height: rem(560px);
 
   &::after {
     content: "";
@@ -73,7 +74,11 @@
   }
 }
 
-.lightOverlay {
+.sliderItem {
+  @include breakpoint(md) {
+    min-height: rem(720px);
+  }
+
   &::after {
     opacity: 0.35;
   }

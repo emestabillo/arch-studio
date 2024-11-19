@@ -39,19 +39,19 @@ function ImageWithOverlayText({
       </div>
       <div
         className={`${styles.imageContainer} ${
-          variant === "sliderItem" ? styles.lightOverlay : ""
+          variant === "sliderItem" ? styles.sliderItem : ""
         }`}
       >
-        <picture>
+        <picture className={styles.picture}>
           <source srcSet={imageSrcMobile} media="(max-width: 767px)" />
           <source
             srcSet={imageSrcTablet}
             media="(min-width: 768px) and (max-width: 1023px)"
           />
           {variant === "sliderItem" ? (
-            <Image src={imageSrcDesktop} alt="" width={1110} height={720} />
+            <Image src={imageSrcDesktop} alt="" fill />
           ) : (
-            <Image src={imageSrcDesktop} alt="" width={1110} height={560} />
+            <Image src={imageSrcDesktop} alt="" fill />
           )}
         </picture>
       </div>
