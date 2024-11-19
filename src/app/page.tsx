@@ -15,7 +15,9 @@ import Carousel from "@/components/Carousel/Carousel";
 export default function Home() {
   return (
     <main>
-      <Carousel />
+      <section className={`bottom-spacing ${styles.carouselSection}`}>
+        <Carousel />
+      </section>
       <HeadingAndText
         heading="Welcome to Arch Studio"
         paragraphs={[

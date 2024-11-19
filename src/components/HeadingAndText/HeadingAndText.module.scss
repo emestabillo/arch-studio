@@ -3,6 +3,12 @@
 .mainWrapper {
   position: relative;
 
+  &::before {
+    @include breakpoint(sm) {
+      content: unset;
+    }
+  }
+
   @include breakpoint(md) {
     display: flex;
     gap: 15%;
@@ -19,6 +25,7 @@
   @include breakpoint(md) {
     align-self: flex-end;
     padding-top: rem(74px);
+    transform: translateX(rem(60px));
   }
 }
 
@@ -40,9 +47,11 @@
   opacity: 0;
 
   @include breakpoint(md) {
-    position: unset;
-    z-index: unset;
+    position: relative;
+    min-height: rem(568px);
+    max-width: rem(350px);
     opacity: 1;
+    z-index: unset;
   }
 
   img {

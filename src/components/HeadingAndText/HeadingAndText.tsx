@@ -35,12 +35,7 @@ export default function HeadingAndText({
         })}
       </div>
       <div className={styles.imageContainer}>
-        <Image
-          src={imgSrc}
-          alt="Small team, big ideas"
-          width={540}
-          height={568}
-        />
+        <Image src={imgSrc} alt="Small team, big ideas" fill />
       </div>
     </section>
   );

@@ -31,9 +31,11 @@ export default function Carousel() {
 
   return (
     <div className={`container ${styles.carouselWrapper}`}>
+      <h1 className={styles.homeHeroHeading}>Welcome</h1>
       <Swiper
         ref={swiperRef}
         modules={[Navigation, Pagination, A11y]}
+        loop={true}
         navigation
         pagination={{
           clickable: true,

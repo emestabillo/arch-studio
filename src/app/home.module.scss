@@ -1,5 +1,15 @@
 @use "../styles/abstracts/index" as *;
 
+.carouselSection {
+  @include breakpoint(sm) {
+    padding-bottom: rem(100px);
+  }
+
+  @include breakpoint(md) {
+    padding-bottom: rem(150px);
+  }
+}
+
 .featuredSection {
   display: grid;
   gap: rem(24px);

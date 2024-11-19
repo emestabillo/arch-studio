@@ -9,6 +9,19 @@
     --width: 90%;
   }
 
+  .homeHeroHeading {
+    position: absolute;
+
+    @include breakpoint(sm) {
+      bottom: rem(-252px);
+      z-index: 2;
+    }
+
+    @include breakpoint(md) {
+      bottom: rem(-338px);
+    }
+  }
+
   .paginationCustom {
     position: absolute;
     bottom: 1rem;
