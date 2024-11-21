@@ -3,7 +3,7 @@
 import styles from "./Header.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import hamburgerBtn from "../../../public/icons/icon-hamburger.svg";
 import closeBtn from "../../../public/icons/icon-close.svg";
 import { NavlinksProps } from "@/shared/Navlinks";
@@ -13,21 +13,30 @@ function Header({ links }: NavlinksProps) {
   const toggleMenu = () => {
     setShowMenu((current) => !current);
   };
+
+  const toggleBodyOverflow = (show: boolean) => {
+    document.body.classList.toggle("overflow-hidden", show);
+  };
+
   // Prevent scroll on body when slideout nav is open
-  // useEffect(() => {
-  //   (() => {
-  //     showMenu
-  //       ? document.body.classList.add("overflow")
-  //       : document.body.classList.remove("overflow");
-  //   })();
-  // }, [showMenu]);
+  useEffect(() => {
+    toggleBodyOverflow(showMenu);
+
+    return () => {
+      document.body.classList.remove("header-menu-open");
+    };
+  }, [showMenu]);
 
   return (
     <header className={`container ${styles.header}`}>
-      <Link href="/" className={styles.headerLogo}>
+      <Link
+        href="/"
+        className={styles.headerLogo}
+        onClick={() => setShowMenu(false)}
+      >
         <Image src="/logo-main.svg" alt="Scoot - Home" width="78" height="32" />
       </Link>
-      <nav className={styles.nav}>
+      <nav>
         <button
           className={styles.burgerBtn}
           onClick={toggleMenu}
@@ -48,11 +57,11 @@ function Header({ links }: NavlinksProps) {
           {links.map((link) => {
             const { name, route } = link;
             return (
-              <li key={name} className={styles.menuListItem}>
+              <li key={name}>
                 <Link
                   href={route}
                   className={styles.menuLink}
-                  onClick={toggleMenu}
+                  onClick={() => setShowMenu(false)}
                 >
                   {name}
                 </Link>

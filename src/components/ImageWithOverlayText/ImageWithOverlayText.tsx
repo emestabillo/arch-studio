@@ -28,7 +28,7 @@ function ImageWithOverlayText({
     <div className={`${styles.sectionContainer}`}>
       <div className={styles.textContainer}>
         <h2
-          className={`${styles.heading} ${
+          className={`mediumHeading ${styles.heading} ${
             variant === "carouselItem" ? styles.carouselHeading : ""
           }`}
         >

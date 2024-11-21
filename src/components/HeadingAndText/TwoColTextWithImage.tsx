@@ -18,7 +18,7 @@ export default function TwoColTextWithImage({
 }: TwoColTextWithImageProps) {
   return (
     <section
-      className={`container decorativeLine top-spacing bottom-spacing ${
+      className={`container decorative-line top-spacing bottom-spacing ${
         styles.mainWrapper
       } ${variant === "narrowImage" ? styles.narrowImage : ""}`}
     >

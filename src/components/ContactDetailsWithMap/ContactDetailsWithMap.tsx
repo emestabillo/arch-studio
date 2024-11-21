@@ -39,7 +39,7 @@ export default function ContactDetailsWithMap() {
   return (
     <>
       <div
-        className={`container bottom-spacing decorativeLine ${styles.contentWrapper}`}
+        className={`container bottom-spacing decorative-line ${styles.contentWrapper}`}
       >
         <h2>Contact Details</h2>
         <div className={styles.detailsGrid}>

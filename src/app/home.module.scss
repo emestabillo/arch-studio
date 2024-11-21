@@ -9,8 +9,8 @@
     padding-bottom: rem(150px);
   }
 
-  &:has(+ :global.decorativeLine) {
-    + :global.decorativeLine {
+  &:has(+ :global.decorative-line) {
+    + :global.decorative-line {
       &::before {
         @include breakpoint(sm) {
           content: unset;

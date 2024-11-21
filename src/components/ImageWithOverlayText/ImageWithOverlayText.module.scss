@@ -28,7 +28,6 @@
 
 .heading {
   color: var(--clr-white);
-  max-width: 10ch;
 
   &:not(:has(~ .paragraph)) {
     padding-bottom: rem(32px);

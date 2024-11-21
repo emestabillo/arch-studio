@@ -53,7 +53,7 @@ export default function InternalHeader({
       </div>
       <div className={styles.textContainer}>
         <h1 className={styles.largeHeading}>{heading}</h1>
-        <div className={`${styles.subtext} decorativeLine`}>
+        <div className={`${styles.subtext} decorative-line`}>
           <h2>{subheading}</h2>
           <p>{paragraph}</p>
         </div>

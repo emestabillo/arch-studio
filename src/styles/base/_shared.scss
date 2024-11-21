@@ -39,7 +39,7 @@
   max-width: 10ch;
 }
 
-.decorativeLine {
+.decorative-line {
   position: relative;
 
   &::before {
@@ -49,4 +49,8 @@
     height: 1px;
     width: rem(65px);
   }
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }

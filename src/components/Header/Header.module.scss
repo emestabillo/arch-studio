@@ -6,27 +6,40 @@
   justify-content: space-between;
   padding-block: rem(32px);
 
+  &::before {
+    background-color: hsl(0, 0%, 0%);
+    content: "";
+    height: 100vh;
+    right: -100vw;
+    position: fixed;
+    opacity: 0;
+    top: rem(96px);
+    transition: opacity 400ms ease;
+    width: 100vw;
+    z-index: 3;
+
+    @include breakpoint(sm) {
+      content: unset;
+    }
+  }
+
   @include breakpoint(sm) {
     justify-content: unset;
     gap: min(10%, rem(95px));
     padding-block: rem(56px);
+  }
+
+  &:has(.active) {
+    &::before {
+      opacity: 0.75;
+      right: 0;
+    }
   }
 }
 
 .headerLogo {
   display: flex;
   align-items: center;
-}
-
-.nav {
-  // position: relative;
-  // left: 0;
-  // top: rem(22px);
-
-  @include breakpoint(sm) {
-    // position: initial;
-    // flex: 1;
-  }
 }
 
 .burgerBtn {
@@ -43,13 +56,10 @@
   top: rem(96px);
   right: -90vw;
   overflow: hidden;
-  z-index: 100;
   transition: all 0.2s ease-in-out;
   background-color: var(--clr-very-light-gray);
   padding: rem(36px) rem(48px);
-  isolation: isolate;
-  // outline: 1px solid red;
-  // background-color: white;
+  z-index: 4;
 
   @include breakpoint(sm) {
     position: initial;
@@ -61,23 +71,10 @@
     gap: rem(32px);
     align-items: center;
   }
-
-  &::before {
-    background-color: hsl(0, 0%, 0%);
-    content: "";
-    height: 100vh;
-    left: 0;
-    position: fixed;
-    opacity: 0;
-    top: rem(96px);
-    transition: opacity 400ms ease;
-    width: 100vw;
-    z-index: -4;
-    pointer-events: none;
-  }
 }
 
-.menuListItem {
+.active {
+  right: 0;
 }
 
 .menuLink {
@@ -90,19 +87,5 @@
 
   &:hover {
     color: var(--clr-dark-blue);
-  }
-}
-
-.active {
-  right: 0;
-
-  &::before {
-    opacity: 0.75;
-    // background-color: hsl(0, 0%, 0%, 0.75);
-    pointer-events: all;
-
-    @include breakpoint(sm) {
-      content: unset;
-    }
   }
 }
