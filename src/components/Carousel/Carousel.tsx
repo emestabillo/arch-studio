@@ -48,7 +48,7 @@ export default function Carousel() {
         {carouselItems.map((item) => (
           <SwiperSlide key={item.title}>
             <ImageWithOverlayText
-              variant="sliderItem"
+              variant="carouselItem"
               imageSrcDesktop={item.imageSrcDesktop}
               imageSrcTablet={item.imageSrcTablet}
               imageSrcMobile={item.imageSrcMobile}
