@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getImageProps } from "next/image";
-import styles from "./ProjectCard.module.scss";
+import styles from "./ProjectList.module.scss";
 
 interface ProjectCardProps {
   variant?: "defaultCard" | "numberedCard";
@@ -46,7 +46,7 @@ export default function ProjectCard({
 
   return (
     <li
-      className={`${styles.card} ${
+      className={`card ${styles.card} ${
         variant === "numberedCard" ? styles.number : ""
       }`}
     >

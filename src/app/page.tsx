@@ -3,7 +3,7 @@ import ImageWithOverlayText from "@/components/ImageWithOverlayText/ImageWithOve
 import imageSrcMobile from "../../public/images/home/mobile/image-small-team.jpg";
 import imageSrcTablet from "../../public/images/home/tablet/image-small-team.jpg";
 import imageSrcDesktop from "../../public/images/home/desktop/image-small-team.jpg";
-import ProjectCard from "@/components/ProjectCard/ProjectCard";
+import ProjectCard from "@/components/ProjectList/ProjectCard";
 import { projectList } from "@/data/portfolio";
 import Button from "@/components/Button/Button";
 import styles from "./home.module.scss";

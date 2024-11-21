@@ -1,21 +1,10 @@
-import ProjectCard from "@/components/ProjectCard/ProjectCard";
 import { projectList } from "@/data/portfolio";
-import styles from "./portfolio.module.scss";
+import ProjectList from "@/components/ProjectList/ProjectList";
 
 export default function portfolio() {
   return (
-    <ul className={`container ${styles.grid}`}>
-      {projectList.map((project) => (
-        <ProjectCard
-          key={project.projectTitle}
-          variant="defaultCard"
-          projectTitle={project.projectTitle}
-          subHeading={project.subHeading}
-          imageSrcDesktop={project.imageSrcDesktop}
-          imageSrcTablet={project.imageSrcTablet}
-          imageSrcMobile={project.imageSrcMobile}
-        />
-      ))}
-    </ul>
+    <section className="container">
+      <ProjectList projectList={projectList} />
+    </section>
   );
 }
