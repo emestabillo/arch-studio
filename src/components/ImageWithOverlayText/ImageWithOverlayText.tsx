@@ -4,7 +4,7 @@ import styles from "./ImageWithOverlayText.module.scss";
 import arrow from "../../../public/icons/icon-arrow.svg";
 
 interface ImageWithOverlayTextProps {
-  variant?: "default" | "sliderItem";
+  variant?: "default" | "carouselItem";
   heading: string;
   paragraph?: string;
   ctaText: string;
@@ -29,7 +29,7 @@ function ImageWithOverlayText({
       <div className={styles.textContainer}>
         <h2
           className={`${styles.heading} ${
-            variant === "sliderItem" ? styles.sliderHeading : ""
+            variant === "carouselItem" ? styles.carouselHeading : ""
           }`}
         >
           {heading}
@@ -39,7 +39,7 @@ function ImageWithOverlayText({
       </div>
       <div
         className={`${styles.imageContainer} ${
-          variant === "sliderItem" ? styles.sliderItem : ""
+          variant === "carouselItem" ? styles.carouselItem : ""
         }`}
       >
         <picture className={styles.picture}>
@@ -48,11 +48,7 @@ function ImageWithOverlayText({
             srcSet={imageSrcTablet}
             media="(min-width: 768px) and (max-width: 1023px)"
           />
-          {variant === "sliderItem" ? (
-            <Image src={imageSrcDesktop} alt="" fill />
-          ) : (
-            <Image src={imageSrcDesktop} alt="" fill />
-          )}
+          <Image src={imageSrcDesktop} alt="" fill sizes="100vw" />
         </picture>
       </div>
     </div>

@@ -1,22 +1,26 @@
-import styles from "./HeadingAndText.module.scss";
+import styles from "./TwoColTextWithImage.module.scss";
 import Image from "next/image";
 
-interface HeadingAndTextProps {
+interface TwoColTextWithImageProps {
+  variant?: "default" | "narrowImage";
   heading: string;
   headingVariant?: string;
   paragraphs: string[];
   imgSrc: string;
 }
 
-export default function HeadingAndText({
+export default function TwoColTextWithImage({
+  variant = "default",
   heading,
   headingVariant,
   paragraphs,
   imgSrc,
-}: HeadingAndTextProps) {
+}: TwoColTextWithImageProps) {
   return (
     <section
-      className={`container decorativeLine top-spacing bottom-spacing ${styles.mainWrapper}`}
+      className={`container decorativeLine top-spacing bottom-spacing ${
+        styles.mainWrapper
+      } ${variant === "narrowImage" ? styles.narrowImage : ""}`}
     >
       <div className={styles.textContainer}>
         <h2
@@ -35,7 +39,7 @@ export default function HeadingAndText({
         })}
       </div>
       <div className={styles.imageContainer}>
-        <Image src={imgSrc} alt="Small team, big ideas" fill />
+        <Image src={imgSrc} alt="Small team, big ideas" fill sizes="50vw" />
       </div>
     </section>
   );

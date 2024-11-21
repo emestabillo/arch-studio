@@ -8,6 +8,16 @@
   @include breakpoint(md) {
     padding-bottom: rem(150px);
   }
+
+  &:has(+ :global.decorativeLine) {
+    + :global.decorativeLine {
+      &::before {
+        @include breakpoint(sm) {
+          content: unset;
+        }
+      }
+    }
+  }
 }
 
 .featuredSection {

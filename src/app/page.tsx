@@ -1,5 +1,4 @@
 import arrow from "../../public/icons/icon-arrow.svg";
-// import Button from "@/components/Button";
 import ImageWithOverlayText from "@/components/ImageWithOverlayText/ImageWithOverlayText";
 import imageSrcMobile from "../../public/images/home/mobile/image-small-team.jpg";
 import imageSrcTablet from "../../public/images/home/tablet/image-small-team.jpg";
@@ -8,7 +7,7 @@ import ProjectCard from "@/components/ProjectCard/ProjectCard";
 import { projectList } from "@/data/portfolio";
 import Button from "@/components/Button/Button";
 import styles from "./home.module.scss";
-import HeadingAndText from "@/components/HeadingAndText/HeadingAndText";
+import TwoColTextWithImage from "@/components/HeadingAndText/TwoColTextWithImage";
 import welcomeImage from "../../public/images/home/desktop/image-welcome.jpg";
 import Carousel from "@/components/Carousel/Carousel";
 
@@ -18,7 +17,8 @@ export default function Home() {
       <section className={`bottom-spacing ${styles.carouselSection}`}>
         <Carousel />
       </section>
-      <HeadingAndText
+      <TwoColTextWithImage
+        variant="narrowImage"
         heading="Welcome to Arch Studio"
         paragraphs={[
           "We have a unique network and skillset to help bring your projects to life. Our small team of highly skilled individuals combined with our large network put us in a strong position to deliver exceptional results.",
@@ -37,7 +37,7 @@ export default function Home() {
           href="/about"
         />
       </section>
-      <section className={`container ${styles.featuredSection}`}>
+      <section className={`container top-spacing ${styles.featuredSection}`}>
         <h2>Featured</h2>
         <ul className={styles.featuredCardsContainer}>
           {projectList
@@ -63,40 +63,6 @@ export default function Home() {
           otherClass={styles.featuredButton}
         />
       </section>
-      {/* <ProjectCard
-        projectTitle="Seraph Station"
-        subHeading="September 2019"
-        imageSrcDesktop={imageSrcDesktop.src}
-        imageSrcTablet={imageSrcTablet.src}
-        imageSrcMobile={imageSrcMobile.src}
-      /> */}
-      {/* <ProjectCard
-        variant="defaultCard"
-        projectTitle="Project Del Sol"
-        ctaLinkText="View all projects"
-        ctaLinkUrl="/portfolio"
-        imageSrcDesktop={imageSrcDesktop.src}
-        imageSrcTablet={imageSrcTablet.src}
-        imageSrcMobile={imageSrcMobile.src}
-      /> */}
-      {/* <h1 className="screenReaderOnly">Welcome</h1> */}
-      {/* <ImageWithOverlayText
-        variant={"sliderItem"}
-        imageSrcDesktop={imageSrcDesktop.src}
-        imageSrcTablet={imageSrcTablet.src}
-        imageSrcMobile={imageSrcMobile.src}
-        heading="Small team, big ideas"
-        paragraph="Project made for an art museum near Southwest London. Project Paramour is a statement of bold, modern architecture."
-        ctaText="about us"
-      /> */}
-
-      {/* <Button
-        text="Click me"
-        href="/about"
-        // onClick={() => console.log("Button clicked")}
-      />
-      <Button icon={arrow} />
-      <Button text={"02"} variant="light" /> */}
     </main>
   );
 }

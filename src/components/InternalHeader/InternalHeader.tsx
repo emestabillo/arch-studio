@@ -26,7 +26,6 @@ export default function InternalHeader({
     ...common,
     width: 630,
     height: 720,
-    // quality: 80,
     src: imageSrcDesktop,
   });
   const {
@@ -35,7 +34,6 @@ export default function InternalHeader({
     ...common,
     width: 573,
     height: 720,
-    // quality: 70,
     src: imageSrcTablet,
   });
 

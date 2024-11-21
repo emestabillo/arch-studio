@@ -17,7 +17,7 @@ function contact() {
         imageSrcTablet={heroImageTablet.src}
         imageSrcMobile={heroImageMobile.src}
       />
-      <section className={`${styles.mainWrapper}`}>
+      <section className={`${styles.contactWithMapSection}`}>
         <ContactDetailsWithMap />
       </section>
       <section className={`top-spacing bottom-spacing ${styles.formSection}`}>

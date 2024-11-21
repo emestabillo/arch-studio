@@ -35,7 +35,7 @@
   }
 }
 
-.sliderHeading {
+.carouselHeading {
   font-size: rem(48px);
 
   @include breakpoint(sm) {
@@ -69,17 +69,24 @@
     width: 100%;
   }
 
+  picture {
+    position: relative;
+    min-height: rem(560px);
+  }
+
   img {
     object-fit: cover;
   }
 }
 
-.sliderItem {
-  @include breakpoint(sm) {
-    min-height: rem(720px);
-  }
-
+.carouselItem {
   &::after {
     opacity: 0.35;
+  }
+
+  picture {
+    @include breakpoint(sm) {
+      min-height: rem(720px);
+    }
   }
 }

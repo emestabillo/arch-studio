@@ -1,4 +1,4 @@
-import HeadingAndText from "@/components/HeadingAndText/HeadingAndText";
+import TwoColTextWithImage from "@/components/HeadingAndText/TwoColTextWithImage";
 import imageHeritage from "../../../public/images/about/desktop/image-heritage.jpg";
 import TeamCard from "@/components/TeamCard/TeamCard";
 import { teamMembers } from "@/data/team";
@@ -19,7 +19,7 @@ export default function page() {
         imageSrcTablet={heroImageTablet.src}
         imageSrcMobile={heroImageMobile.src}
       />
-      <HeadingAndText
+      <TwoColTextWithImage
         heading="Our Heritage"
         headingVariant="short"
         paragraphs={[

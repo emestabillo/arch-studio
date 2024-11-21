@@ -6,7 +6,6 @@
   @include breakpoint(sm) {
     display: grid;
     grid-template-areas: "content";
-    padding-bottom: rem(200px);
 
     @include breakpoint(lg) {
       grid-template-areas: unset;
@@ -94,6 +93,10 @@
 
     @include breakpoint(sm) {
       content: "";
+    }
+
+    @include breakpoint(lg) {
+      transform: translateX(150%);
     }
   }
 
