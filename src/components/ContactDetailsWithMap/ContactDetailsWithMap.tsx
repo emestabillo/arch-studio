@@ -4,6 +4,7 @@ import ContactCard from "../ContactCard/ContactCard";
 import Map from "../Map/Map";
 import styles from "./ContactDetailsWithMap.module.scss";
 import { officeLocations } from "@/data/officeLocations";
+import useFadeInUpAnimation from "@/hooks/useFadeInUpAnimation";
 
 const center = {
   lat: 40.736706,
@@ -15,6 +16,9 @@ type MapRef = google.maps.Map | null;
 export default function ContactDetailsWithMap() {
   const [activeMarker, setActiveMarker] = useState<number | null>(null);
   const mapRef = useRef<MapRef>(null);
+
+  const containerRef = useRef<HTMLDivElement>(null);
+  useFadeInUpAnimation(containerRef);
 
   const handleViewOnMap = useCallback((index: number) => {
     if (mapRef.current && officeLocations[index]) {
@@ -40,6 +44,7 @@ export default function ContactDetailsWithMap() {
     <>
       <div
         className={`container bottom-spacing decorative-line ${styles.contentWrapper}`}
+        ref={containerRef}
       >
         <h2>Contact Details</h2>
         <div className={styles.detailsGrid}>

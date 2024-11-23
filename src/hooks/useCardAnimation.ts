@@ -1,17 +1,19 @@
-import { RefObject, useEffect } from "react";
+import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import useIsomorphicLayoutEffect from "./useIsomorphicLayoutEffect";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const useCardAnimation = (containerRef: RefObject<HTMLUListElement>) => {
-  useEffect(() => {
+export default function useCardAnimation<T extends HTMLElement>() {
+  const containerRef = useRef<T>(null);
+
+  useIsomorphicLayoutEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
     const cards = gsap.utils.toArray<HTMLElement>(container.children);
-
-    const cardPerRow = 3; //desktop
+    const cardPerRow = 3; // desktop
 
     cards.forEach((card, index) => {
       gsap.fromTo(
@@ -29,7 +31,11 @@ const useCardAnimation = (containerRef: RefObject<HTMLUListElement>) => {
         }
       );
     });
-  }, [containerRef]);
-};
 
-export default useCardAnimation;
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
+
+  return containerRef;
+}

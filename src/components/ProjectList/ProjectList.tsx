@@ -1,6 +1,5 @@
 "use client";
 
-import { useRef } from "react";
 import ProjectCard from "@/components/ProjectList/ProjectCard";
 import styles from "./ProjectList.module.scss";
 import useCardAnimation from "@/hooks/useCardAnimation";
@@ -19,8 +18,7 @@ interface ProjectListProps {
 }
 
 export default function ProjectList({ projectList }: ProjectListProps) {
-  const containerRef = useRef<HTMLUListElement>(null);
-  useCardAnimation(containerRef);
+  const containerRef = useCardAnimation<HTMLUListElement>();
 
   return (
     <ul ref={containerRef} className={styles.grid}>
