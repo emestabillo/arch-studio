@@ -1,0 +1,53 @@
+@use "../../../styles/abstracts/mixins" as mixin;
+@use "../../../styles/abstracts/functions" as *;
+
+@mixin button-styles {
+  --background-color: var(--clr-dark-blue);
+  --text-color: var(--clr-white);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: rem(24px);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: rem(24px) rem(32px);
+  text-transform: capitalize;
+  transition: var(--transition);
+  width: max-content;
+
+  img {
+    transition: var(--transition);
+  }
+
+  &:hover {
+    --background-color: var(--clr-dark-gray);
+
+    img {
+      transform: translateX(4px);
+    }
+  }
+
+  &:active {
+    --background-color: var(--clr-light-gray);
+  }
+}
+
+.btn {
+  @include button-styles;
+}
+
+.light {
+  --background-color: var(--clr-white);
+  --text-color: var(--clr-medium-gray);
+
+  &:hover {
+    --background-color: var(--clr-very-light-gray);
+  }
+
+  &:active {
+    --background-color: var(--clr-dark-blue);
+    --text-color: var(--clr-white);
+  }
+}

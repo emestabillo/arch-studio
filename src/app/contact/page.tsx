@@ -1,10 +1,10 @@
-import InternalHeader from "@/components/InternalHeader/InternalHeader";
-import ContactForm from "@/components/Form/Form";
+import InternalHeader from "@/components/shared/InternalHeader/InternalHeader";
+import ContactForm from "@/components/contact/ContactForm/ContactForm";
 import heroImageDesktop from "../../../public/images/contact/desktop/image-hero.jpg";
 import heroImageTablet from "../../../public/images/contact/tablet/image-hero.jpg";
 import heroImageMobile from "../../../public/images/contact/mobile/image-hero.jpg";
 import styles from "./contact.module.scss";
-import ContactDetailsWithMap from "@/components/ContactDetailsWithMap/ContactDetailsWithMap";
+import ContactDetailsWithMap from "@/components/contact/ContactDetailsWithMap/ContactDetailsWithMap";
 
 function contact() {
   return (
@@ -20,12 +20,12 @@ function contact() {
       <section className={`${styles.contactWithMapSection}`}>
         <ContactDetailsWithMap />
       </section>
-      <section className={`top-spacing bottom-spacing ${styles.formSection}`}>
-        <div className={`container ${styles.formContentWrapper}`}>
-          <h2>Connect with us</h2>
-          <ContactForm />
-        </div>
-      </section>
+      {/* <section className={`top-spacing bottom-spacing ${styles.formSection}`}> */}
+      {/* <div className={`container ${styles.formContentWrapper}`}>
+          <h2>Connect with us</h2> */}
+      <ContactForm />
+      {/* </div> */}
+      {/* </section> */}
     </main>
   );
 }

@@ -1,35 +1,7 @@
 @use "../../styles/abstracts/index" as *;
 
-.formSection {
-  padding-bottom: rem(132px);
-
-  @include breakpoint(sm) {
-    padding-bottom: rem(200px);
-  }
-
-  h2 {
-    max-width: 8ch;
-    padding-bottom: rem(24px);
-
-    @include breakpoint(sm) {
-      max-width: unset;
-    }
-
-    @include breakpoint(md) {
-      flex-basis: 30%;
-    }
-  }
-}
-
 .contactWithMapSection {
   @include breakpoint(md) {
     margin-top: rem(100px);
-  }
-}
-
-.formContentWrapper {
-  @include breakpoint(md) {
-    display: flex;
-    gap: 8%;
   }
 }

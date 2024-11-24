@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./global.scss";
-import Header from "@/components/Header/Header";
-import { Navlinks } from "@/shared/Navlinks";
-import Footer from "@/components/Footer/Footer";
+import Header from "@/components/layout/Header/Header";
+import { navLinks } from "../components/layout/navlinks";
+import Footer from "@/components/layout/Footer/Footer";
 import localFont from "next/font/local";
 
 const spartan = localFont({
@@ -32,9 +32,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${spartan.variable}`}>
-        <Header links={Navlinks} />
+        <Header links={navLinks} />
         {children}
-        <Footer links={Navlinks} />
+        <Footer links={navLinks} />
       </body>
     </html>
   );
