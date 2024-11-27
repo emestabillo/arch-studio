@@ -72,6 +72,7 @@
 }
 
 .subtext {
+  --myScale: 0;
   background-color: var(--clr-white);
   padding-top: rem(35px);
   position: relative;
@@ -93,10 +94,12 @@
 
     @include breakpoint(sm) {
       content: "";
+      transform: scale(var(--myScale));
+      transform-origin: left;
     }
 
     @include breakpoint(lg) {
-      transform: translateX(150%);
+      transform: translateX(150%) scale(var(--myScale));
     }
   }
 
@@ -114,6 +117,16 @@
     }
   }
 
+  h2,
+  p {
+    --translateY: 50px;
+    transform: translateY(var(--translateY));
+
+    @include breakpoint(lg) {
+      transform: translate(25%, var(--translateY));
+    }
+  }
+
   h2 {
     max-width: 12ch;
     padding-bottom: rem(30px);
@@ -121,17 +134,9 @@
     @include breakpoint(sm) {
       padding-top: rem(74px);
     }
-
-    @include breakpoint(lg) {
-      transform: translateX(25%);
-    }
   }
 
   p {
     max-width: 95%;
-
-    @include breakpoint(lg) {
-      transform: translateX(25%);
-    }
   }
 }

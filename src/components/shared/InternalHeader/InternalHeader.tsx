@@ -1,5 +1,9 @@
+"use client";
 import { getImageProps } from "next/image";
 import styles from "./InternalHeader.module.scss";
+import { useRef } from "react";
+import { createTimeline } from "./internalHeaderAnimation";
+import { useGSAP } from "@gsap/react";
 
 interface InternalHeaderProps {
   heading: string;
@@ -37,8 +41,22 @@ export default function InternalHeader({
     src: imageSrcTablet,
   });
 
+  const containerRef = useRef<HTMLDivElement>(null);
+  useGSAP(
+    () => {
+      createTimeline(containerRef);
+    },
+    {
+      scope: containerRef,
+      dependencies: [],
+    }
+  );
+
   return (
-    <section className={`container bottom-spacing ${styles.mainWrrapper}`}>
+    <section
+      className={`container bottom-spacing ${styles.mainWrrapper}`}
+      ref={containerRef}
+    >
       <div className={styles.imageContainer}>
         <picture>
           <source media="(min-width: 64em)" srcSet={desktop} />
