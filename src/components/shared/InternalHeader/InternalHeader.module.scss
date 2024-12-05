@@ -119,7 +119,7 @@
 
   h2,
   p {
-    --translateY: 50px;
+    --translateY: 0px;
     transform: translateY(var(--translateY));
 
     @include breakpoint(lg) {
