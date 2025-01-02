@@ -1,5 +1,8 @@
+"use client";
+import { useEffect, useRef } from "react";
 import styles from "./TwoColTextWithImage.module.scss";
 import Image from "next/image";
+import { fadeInUpAnimation } from "@/animations/fadeInUpAnimation";
 
 interface TwoColTextWithImageProps {
   variant?: "default" | "narrowImage";
@@ -16,11 +19,17 @@ export default function TwoColTextWithImage({
   paragraphs,
   imgSrc,
 }: TwoColTextWithImageProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const animate = fadeInUpAnimation(containerRef);
+    return animate;
+  }, []);
   return (
     <section
       className={`container decorative-line top-spacing bottom-spacing ${
         styles.mainWrapper
       } ${variant === "narrowImage" ? styles.narrowImage : ""}`}
+      ref={containerRef}
     >
       <div className={styles.textContainer}>
         <h2
