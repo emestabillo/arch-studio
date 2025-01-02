@@ -1,8 +1,8 @@
 "use client";
-
+import { useRef, useEffect } from "react";
 import ProjectCard from "./ProjectCard";
 import styles from "./ProjectList.module.scss";
-import useCardAnimation from "@/hooks/useCardAnimation";
+import staggerAnimation from "@/animations/staggerAnimation";
 
 interface Project {
   projectTitle: string;
@@ -18,7 +18,14 @@ interface ProjectListProps {
 }
 
 export default function ProjectList({ projectList }: ProjectListProps) {
-  const containerRef = useCardAnimation<HTMLUListElement>();
+  const containerRef = useRef<HTMLUListElement>(null);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      const animateCards = staggerAnimation(containerRef.current);
+      return animateCards;
+    }
+  }, []);
 
   return (
     <ul ref={containerRef} className={styles.grid}>
