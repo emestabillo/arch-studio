@@ -1,0 +1,35 @@
+@use "../../../styles/abstracts/index" as *;
+
+.largeHeading {
+  color: transparent;
+  position: absolute;
+  visibility: hidden;
+
+  @include breakpoint(sm) {
+    color: var(--clr-very-light-gray);
+  }
+}
+
+.internalHeading {
+  position: relative;
+  transform: translateY(rem(10px));
+  z-index: 2;
+
+  @include breakpoint(lg) {
+    position: absolute;
+    transform: translate(1rem, rem(-416px));
+  }
+}
+
+.homeHeroHeading {
+  position: absolute;
+
+  @include breakpoint(sm) {
+    bottom: rem(-252px);
+    z-index: 2;
+  }
+
+  @include breakpoint(md) {
+    bottom: rem(-338px);
+  }
+}

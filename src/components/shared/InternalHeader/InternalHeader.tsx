@@ -4,6 +4,7 @@ import styles from "./InternalHeader.module.scss";
 import { useRef } from "react";
 import { createTimeline } from "./internalHeaderAnimation";
 import { useGSAP } from "@gsap/react";
+import LargeHeading from "@/components/ui/LargeHeading/LargeHeading";
 
 interface InternalHeaderProps {
   heading: string;
@@ -70,7 +71,8 @@ export default function InternalHeader({
         </picture>
       </div>
       <div className={styles.textContainer}>
-        <h1 className={styles.largeHeading}>{heading}</h1>
+        <LargeHeading level={1}>{heading}</LargeHeading>
+        {/* <h1 className={styles.largeHeading}>{heading}</h1> */}
         <div className={`${styles.subtext} decorative-line`}>
           <h2>{subheading}</h2>
           <p>{paragraph}</p>

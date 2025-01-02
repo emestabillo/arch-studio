@@ -10,10 +10,14 @@ import "swiper/css/pagination";
 import ImageWithOverlayText from "../ImageWithOverlayText/ImageWithOverlayText";
 import { carouselItems } from "@/data/carouselItems";
 import styles from "./Carousel.module.scss";
+import LargeHeading from "@/components/ui/LargeHeading/LargeHeading";
+import headingAnimation from "@/animations/largeHeadingAnimation";
 
 export default function Carousel() {
   const swiperRef = useRef<SwiperRef>(null);
   const paginationRef = useRef<HTMLDivElement>(null);
+  // const headingRef = useRef<HTMLHeadingElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const swiper = swiperRef.current?.swiper as SwiperType | undefined;
@@ -27,11 +31,17 @@ export default function Carousel() {
       swiper.pagination.render();
       swiper.pagination.update();
     }
+
+    if (containerRef.current) {
+      headingAnimation(containerRef.current);
+    }
   }, []);
 
   return (
-    <div className={`container ${styles.carouselWrapper}`}>
-      <h1 className={styles.homeHeroHeading}>Welcome</h1>
+    <div className={`container ${styles.carouselWrapper}`} ref={containerRef}>
+      <LargeHeading level={1} homeHeroHeading>
+        Welcome
+      </LargeHeading>
       <Swiper
         ref={swiperRef}
         modules={[Navigation, Pagination, A11y]}
