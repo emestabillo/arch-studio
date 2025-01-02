@@ -35,6 +35,7 @@ export default function Home() {
           heading="Small team, big ideas"
           ctaText="about us"
           href="/about"
+          enableAnimation={true}
         />
       </section>
       <section className={`container top-spacing ${styles.featuredSection}`}>

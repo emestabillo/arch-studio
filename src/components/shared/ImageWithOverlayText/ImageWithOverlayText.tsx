@@ -1,8 +1,10 @@
+"use client";
+import { useRef, useEffect } from "react";
 import Image from "next/image";
 import Button from "../../ui/Button/Button";
 import styles from "./ImageWithOverlayText.module.scss";
 import arrow from "../../../../public/icons/icon-arrow.svg";
-
+import { scaleAnimation } from "@/animations/scaleAnimation";
 interface ImageWithOverlayTextProps {
   variant?: "default" | "carouselItem";
   heading: string;
@@ -12,9 +14,10 @@ interface ImageWithOverlayTextProps {
   imageSrcTablet: string;
   imageSrcMobile: string;
   href?: string;
+  enableAnimation?: boolean;
 }
 
-function ImageWithOverlayText({
+export default function ImageWithOverlayText({
   variant = "default",
   heading,
   paragraph,
@@ -23,9 +26,23 @@ function ImageWithOverlayText({
   imageSrcTablet,
   imageSrcMobile,
   href,
+  enableAnimation = false,
 }: ImageWithOverlayTextProps) {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (enableAnimation) {
+      scaleAnimation(sectionRef, imageRef);
+    }
+  }, [enableAnimation]);
   return (
-    <div className={`${styles.sectionContainer}`}>
+    <div
+      className={`${styles.sectionContainer} ${
+        enableAnimation ? "overflow-hidden" : ""
+      }`}
+      ref={sectionRef}
+    >
       <div className={styles.textContainer}>
         <h2
           className={`mediumHeading ${styles.heading} ${
@@ -41,6 +58,7 @@ function ImageWithOverlayText({
         className={`${styles.imageContainer} ${
           variant === "carouselItem" ? styles.carouselItem : ""
         }`}
+        ref={imageRef}
       >
         <picture className={styles.picture}>
           <source srcSet={imageSrcMobile} media="(max-width: 767px)" />
@@ -54,5 +72,3 @@ function ImageWithOverlayText({
     </div>
   );
 }
-
-export default ImageWithOverlayText;
