@@ -1,6 +1,6 @@
 "use client";
 import { useCallback, useRef, useState, useEffect } from "react";
-import ContactCard from "../ContactCard/ContactCard";
+import ContactCard from "../ContactDeatilsCard/ContactDeatilsCard";
 import Map from "../Map/Map";
 import styles from "./ContactDetailsWithMap.module.scss";
 import { officeLocations } from "@/data/officeLocations";

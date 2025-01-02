@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "./ContactCard.module.scss";
+import styles from "./ContactDeatilsCard.module.scss";
 import Image from "next/image";
 import arrow from "../../../../public/icons/icon-arrow.svg";
 
