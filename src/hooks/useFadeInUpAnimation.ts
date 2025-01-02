@@ -1,7 +1,6 @@
-import { useRef, RefObject } from "react";
+import { useRef, RefObject, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import useIsomorphicLayoutEffect from "./useIsomorphicLayoutEffect";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -9,7 +8,7 @@ export default function useFadeInUpAnimation<T extends HTMLElement>(
   ref: RefObject<T>
 ) {
   const containerRef = useRef<HTMLElement>(null);
-  useIsomorphicLayoutEffect(() => {
+  useEffect(() => {
     if (!ref.current) return;
 
     const timeline = gsap.timeline({

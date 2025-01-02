@@ -1,10 +1,10 @@
 "use client";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useRef, useState, useEffect } from "react";
 import ContactCard from "../ContactCard/ContactCard";
 import Map from "../Map/Map";
 import styles from "./ContactDetailsWithMap.module.scss";
 import { officeLocations } from "@/data/officeLocations";
-import useFadeInUpAnimation from "@/hooks/useFadeInUpAnimation";
+import { fadeInUpAnimation } from "@/animations/fadeInUpAnimation";
 
 const center = {
   lat: 40.736706,
@@ -18,7 +18,10 @@ export default function ContactDetailsWithMap() {
   const mapRef = useRef<MapRef>(null);
 
   const containerRef = useRef<HTMLDivElement>(null);
-  useFadeInUpAnimation(containerRef);
+  useEffect(() => {
+    const animate = fadeInUpAnimation(containerRef);
+    return animate;
+  }, []);
 
   const handleViewOnMap = useCallback((index: number) => {
     if (mapRef.current && officeLocations[index]) {

@@ -1,8 +1,9 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import styles from "./ContactForm.module.scss";
 import Button from "../../ui/Button/Button";
 import arrow from "../../../../public/icons/icon-arrow.svg";
+import { fadeInUpAnimation } from "@/animations/fadeInUpAnimation";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -16,6 +17,12 @@ export default function ContactForm() {
     email: "",
     message: "",
   });
+
+  const containerRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const animate = fadeInUpAnimation(containerRef);
+    return animate;
+  }, []);
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -66,7 +73,10 @@ export default function ContactForm() {
   //   console.log("Form data:", Object.fromEntries(formData.entries()));
 
   return (
-    <section className={`top-spacing bottom-spacing ${styles.formSection}`}>
+    <section
+      className={`top-spacing bottom-spacing ${styles.formSection}`}
+      ref={containerRef}
+    >
       <div className={`container ${styles.formContentWrapper}`}>
         <h2>Connect with us</h2>
         <form onSubmit={handleSubmit} noValidate className={styles.form}>
