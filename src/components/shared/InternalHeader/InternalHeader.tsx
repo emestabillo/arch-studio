@@ -49,7 +49,6 @@ export default function InternalHeader({
     },
     {
       scope: containerRef,
-      dependencies: [],
     }
   );
 
@@ -72,7 +71,6 @@ export default function InternalHeader({
       </div>
       <div className={styles.textContainer}>
         <LargeHeading level={1}>{heading}</LargeHeading>
-        {/* <h1 className={styles.largeHeading}>{heading}</h1> */}
         <div className={`${styles.subtext} decorative-line`}>
           <h2>{subheading}</h2>
           <p>{paragraph}</p>

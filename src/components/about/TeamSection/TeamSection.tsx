@@ -1,5 +1,6 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
 import styles from "./TeamSection.module.scss";
 import TeamCard from "../TeamCard/TeamCard";
 import { teamMembers } from "@/data/team";
@@ -7,10 +8,12 @@ import { fadeInUpAnimation } from "@/animations/fadeInUpAnimation";
 
 export default function TeamSection() {
   const containerRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const animate = fadeInUpAnimation(containerRef);
-    return animate;
-  }, []);
+  useGSAP(
+    () => {
+      fadeInUpAnimation(containerRef);
+    },
+    { scope: containerRef }
+  );
   return (
     <section
       className={`container top-spacing bottom-spacing ${styles.teamSection}`}

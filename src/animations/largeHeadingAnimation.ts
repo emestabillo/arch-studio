@@ -17,7 +17,7 @@ export default function headingAnimation(container: HTMLElement) {
       {
         clipPath: "inset(-2rem 0% 0 0)",
         autoAlpha: 1,
-        duration: 0.95,
+        duration: 0.75,
         ease: "power2.out",
         scrollTrigger: {
           trigger: h1Element[0],

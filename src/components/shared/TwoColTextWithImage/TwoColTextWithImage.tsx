@@ -1,5 +1,6 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
 import styles from "./TwoColTextWithImage.module.scss";
 import Image from "next/image";
 import { fadeInUpAnimation } from "@/animations/fadeInUpAnimation";
@@ -19,11 +20,15 @@ export default function TwoColTextWithImage({
   paragraphs,
   imgSrc,
 }: TwoColTextWithImageProps) {
+  
   const containerRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const animate = fadeInUpAnimation(containerRef);
-    return animate;
-  }, []);
+  useGSAP(
+    () => {
+      fadeInUpAnimation(containerRef);
+    },
+    { scope: containerRef }
+  );
+
   return (
     <section
       className={`container decorative-line top-spacing bottom-spacing ${

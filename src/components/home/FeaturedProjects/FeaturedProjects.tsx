@@ -1,5 +1,6 @@
 "use client";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
 import styles from "./FeaturedProjects.module.scss";
 import { projectList } from "@/data/portfolio";
 import ProjectCard from "../../portfolio/ProjectCard";
@@ -11,10 +12,12 @@ export default function FeaturedProjects() {
   const featuredProjects = projectList.filter((project) => project.featured);
 
   const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    fadeInUpAnimation(containerRef);
-  }, []);
+  useGSAP(
+    () => {
+      fadeInUpAnimation(containerRef);
+    },
+    { scope: containerRef }
+  );
 
   return (
     <section

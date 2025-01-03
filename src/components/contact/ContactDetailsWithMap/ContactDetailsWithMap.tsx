@@ -1,5 +1,6 @@
 "use client";
-import { useCallback, useRef, useState, useEffect } from "react";
+import { useCallback, useRef, useState } from "react";
+import { useGSAP } from "@gsap/react";
 import ContactCard from "../ContactDeatilsCard/ContactDeatilsCard";
 import Map from "../Map/Map";
 import styles from "./ContactDetailsWithMap.module.scss";
@@ -18,10 +19,12 @@ export default function ContactDetailsWithMap() {
   const mapRef = useRef<MapRef>(null);
 
   const containerRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const animate = fadeInUpAnimation(containerRef);
-    return animate;
-  }, []);
+  useGSAP(
+    () => {
+      fadeInUpAnimation(containerRef);
+    },
+    { scope: containerRef }
+  );
 
   const handleViewOnMap = useCallback((index: number) => {
     if (mapRef.current && officeLocations[index]) {

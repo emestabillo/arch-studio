@@ -1,5 +1,6 @@
 "use client";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
 import ProjectCard from "./ProjectCard";
 import styles from "./ProjectList.module.scss";
 import staggerAnimation from "@/animations/staggerAnimation";
@@ -19,13 +20,14 @@ interface ProjectListProps {
 
 export default function ProjectList({ projectList }: ProjectListProps) {
   const containerRef = useRef<HTMLUListElement>(null);
-
-  useEffect(() => {
-    if (containerRef.current) {
-      const animateCards = staggerAnimation(containerRef.current);
-      return animateCards;
-    }
-  }, []);
+  useGSAP(
+    () => {
+      if (containerRef.current) {
+        staggerAnimation(containerRef.current);
+      }
+    },
+    { scope: containerRef }
+  );
 
   return (
     <ul ref={containerRef} className={styles.grid}>

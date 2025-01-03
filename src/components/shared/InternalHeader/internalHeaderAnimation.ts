@@ -24,7 +24,7 @@ export const createTimeline = (
       },
       {
         clipPath: "inset(0 0 0% 0)",
-        duration: 1,
+        duration: 0.75,
         ease: "power2.out",
       }
     )

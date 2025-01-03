@@ -1,5 +1,6 @@
 "use client";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import Button from "../../ui/Button/Button";
 import styles from "./ImageWithOverlayText.module.scss";
@@ -31,11 +32,14 @@ export default function ImageWithOverlayText({
   const sectionRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (enableAnimation) {
-      scaleAnimation(sectionRef, imageRef);
-    }
-  }, [enableAnimation]);
+  useGSAP(
+    () => {
+      if (enableAnimation) {
+        scaleAnimation(sectionRef, imageRef);
+      }
+    },
+    { scope: sectionRef }
+  );
   return (
     <div
       className={`${styles.sectionContainer} ${

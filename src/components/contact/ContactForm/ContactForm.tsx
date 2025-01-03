@@ -1,5 +1,6 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
+import { useGSAP } from "@gsap/react";
 import styles from "./ContactForm.module.scss";
 import Button from "../../ui/Button/Button";
 import arrow from "../../../../public/icons/icon-arrow.svg";
@@ -19,10 +20,12 @@ export default function ContactForm() {
   });
 
   const containerRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const animate = fadeInUpAnimation(containerRef);
-    return animate;
-  }, []);
+  useGSAP(
+    () => {
+      fadeInUpAnimation(containerRef);
+    },
+    { scope: containerRef }
+  );
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -50,8 +53,6 @@ export default function ContactForm() {
       }));
       return;
     }
-    // Handle form submission logic here
-    console.log("Form data:", formData);
 
     // Clear the form after successful submission
     setFormData({
