@@ -3,10 +3,17 @@ import { useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperType } from "swiper";
 import { SwiperRef } from "swiper/react";
-import { Navigation, Pagination, A11y } from "swiper/modules";
+import {
+  Navigation,
+  Pagination,
+  A11y,
+  EffectFade,
+  Autoplay,
+} from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "swiper/css/effect-fade";
 import ImageWithOverlayText from "../ImageWithOverlayText/ImageWithOverlayText";
 import { carouselItems } from "@/data/carouselItems";
 import styles from "./Carousel.module.scss";
@@ -16,7 +23,6 @@ import headingAnimation from "@/animations/largeHeadingAnimation";
 export default function Carousel() {
   const swiperRef = useRef<SwiperRef>(null);
   const paginationRef = useRef<HTMLDivElement>(null);
-  // const headingRef = useRef<HTMLHeadingElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -33,7 +39,8 @@ export default function Carousel() {
     }
 
     if (containerRef.current) {
-      headingAnimation(containerRef.current);
+      const animateHeading = headingAnimation(containerRef.current);
+      return animateHeading;
     }
   }, []);
 
@@ -44,7 +51,15 @@ export default function Carousel() {
       </LargeHeading>
       <Swiper
         ref={swiperRef}
-        modules={[Navigation, Pagination, A11y]}
+        modules={[Navigation, Pagination, A11y, EffectFade, Autoplay]}
+        effect="fade"
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        }}
+        fadeEffect={{ crossFade: true }}
+        speed={1500}
         loop={true}
         navigation
         pagination={{

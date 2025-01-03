@@ -6,7 +6,7 @@ import logo from "../../../../public/logo-white.svg";
 import arrow from "../../../../public/icons/icon-arrow.svg";
 import { NavlinksProps } from "../navlinks";
 
-function Footer({ links }: NavlinksProps) {
+export default function Footer({ links }: NavlinksProps) {
   return (
     <footer className={styles.footer}>
       <div className={`container ${styles.footerContent}`}>
@@ -32,5 +32,3 @@ function Footer({ links }: NavlinksProps) {
     </footer>
   );
 }
-
-export default Footer;
