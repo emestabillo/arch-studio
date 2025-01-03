@@ -1,0 +1,105 @@
+@use "../../../styles/abstracts/index" as *;
+
+.footer {
+  background-color: var(--clr-very-light-gray);
+
+  @include breakpoint(sm) {
+    background-color: var(--clr-white);
+  }
+
+  > * {
+    transform: translateY(-60px);
+
+    @include breakpoint(sm) {
+      transform: none;
+    }
+  }
+}
+
+.footerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  @include breakpoint(sm) {
+    flex-direction: row;
+    gap: 0;
+    --width: 100%;
+  }
+
+  & > a {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.logoContainer {
+  background-color: var(--clr-dark-blue);
+  max-width: rem(120px);
+  padding: rem(48px) rem(30px);
+
+  @include breakpoint(lg) {
+    max-width: rem(200px);
+    padding: rem(80px) rem(52px);
+  }
+
+  img {
+    height: auto;
+  }
+}
+
+.nav {
+  @include breakpoint(sm) {
+    flex: 1;
+  }
+}
+
+.navLinksContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include breakpoint(sm) {
+    background-color: var(--clr-very-light-gray);
+    flex-direction: row;
+    justify-content: space-between;
+    padding-block: rem(32px);
+    padding-inline: 10%;
+    position: relative;
+  }
+
+  @include breakpoint(lg) {
+    padding-block: rem(67px);
+  }
+
+  &::after {
+    content: none;
+
+    @include breakpoint(sm) {
+      background-color: var(--clr-very-light-gray);
+      content: "";
+      position: absolute;
+      height: 100%;
+      right: -16%;
+      width: 16%;
+    }
+  }
+}
+
+.navLinks {
+  display: block;
+  color: var(--clr-medium-gray);
+  font-weight: 700;
+  padding-block: rem(12px);
+  text-transform: capitalize;
+  transition: all 0.2s ease-in-out;
+
+  @include breakpoint(sm) {
+    padding-block: 1rem;
+  }
+
+  &:hover {
+    color: var(--clr-dark-blue);
+  }
+}

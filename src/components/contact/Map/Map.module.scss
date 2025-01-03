@@ -1,0 +1,14 @@
+@use "../../../styles/abstracts/index" as *;
+
+.mapLoading {
+  display: grid;
+  place-items: center;
+  height: rem(560px);
+}
+
+.mapWrapper {
+  --width: 100%;
+  @include breakpoint(sm) {
+    --width: 90%;
+  }
+}

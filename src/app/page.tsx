@@ -1,15 +1,12 @@
-import arrow from "../../public/icons/icon-arrow.svg";
-import ImageWithOverlayText from "@/components/ImageWithOverlayText/ImageWithOverlayText";
+import ImageWithOverlayText from "@/components/shared/ImageWithOverlayText/ImageWithOverlayText";
 import imageSrcMobile from "../../public/images/home/mobile/image-small-team.jpg";
 import imageSrcTablet from "../../public/images/home/tablet/image-small-team.jpg";
 import imageSrcDesktop from "../../public/images/home/desktop/image-small-team.jpg";
-import ProjectCard from "@/components/ProjectCard/ProjectCard";
-import { projectList } from "@/data/portfolio";
-import Button from "@/components/Button/Button";
 import styles from "./home.module.scss";
-import TwoColTextWithImage from "@/components/HeadingAndText/TwoColTextWithImage";
+import TwoColTextWithImage from "@/components/shared/TwoColTextWithImage/TwoColTextWithImage";
 import welcomeImage from "../../public/images/home/desktop/image-welcome.jpg";
-import Carousel from "@/components/Carousel/Carousel";
+import Carousel from "@/components/shared/Carousel/Carousel";
+import FeaturedProjects from "@/components/home/FeaturedProjects/FeaturedProjects";
 
 export default function Home() {
   return (
@@ -35,34 +32,10 @@ export default function Home() {
           heading="Small team, big ideas"
           ctaText="about us"
           href="/about"
+          enableAnimation={true}
         />
       </section>
-      <section className={`container top-spacing ${styles.featuredSection}`}>
-        <h2>Featured</h2>
-        <ul className={styles.featuredCardsContainer}>
-          {projectList
-            .filter((project) => project.featured)
-            .map((project) => (
-              <ProjectCard
-                key={project.projectTitle}
-                variant="numberedCard"
-                projectTitle={project.projectTitle}
-                subHeading={project.subHeading}
-                imageSrcDesktop={project.imageSrcDesktop}
-                imageSrcTablet={project.imageSrcTablet}
-                imageSrcMobile={project.imageSrcMobile}
-                ctaLinkText="View all projects"
-                ctaLinkUrl="/portfolio"
-              />
-            ))}
-        </ul>
-        <Button
-          text="See all"
-          icon={arrow}
-          href="/portfolio"
-          otherClass={styles.featuredButton}
-        />
-      </section>
+      <FeaturedProjects />
     </main>
   );
 }

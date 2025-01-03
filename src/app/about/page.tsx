@@ -1,12 +1,10 @@
-import TwoColTextWithImage from "@/components/HeadingAndText/TwoColTextWithImage";
+import TwoColTextWithImage from "@/components/shared/TwoColTextWithImage/TwoColTextWithImage";
 import imageHeritage from "../../../public/images/about/desktop/image-heritage.jpg";
-import TeamCard from "@/components/TeamCard/TeamCard";
-import { teamMembers } from "@/data/team";
-import styles from "./about.module.scss";
-import InternalHeader from "@/components/InternalHeader/InternalHeader";
+import InternalHeader from "@/components/shared/InternalHeader/InternalHeader";
 import heroImageDesktop from "../../../public/images/about/desktop/image-hero.jpg";
 import heroImageTablet from "../../../public/images/about/tablet/image-hero.jpg";
 import heroImageMobile from "../../../public/images/about/mobile/image-hero.jpg";
+import TeamSection from "@/components/about/TeamSection/TeamSection";
 
 export default function page() {
   return (
@@ -29,25 +27,7 @@ export default function page() {
         ]}
         imgSrc={imageHeritage.src}
       />
-      <section
-        className={`container top-spacing bottom-spacing ${styles.teamSection}`}
-      >
-        <div className={styles.headingContainer}>
-          <h2 className={`shortHeading ${styles.heading}`}>The Leaders</h2>
-        </div>
-        <div className={styles.teamGrid}>
-          {teamMembers.map((member) => (
-            <TeamCard
-              key={member.name}
-              name={member.name}
-              title={member.title}
-              linkedInLink={member.linkedIn}
-              twitterLink={member.twitter}
-              imgSrc={member.image}
-            />
-          ))}
-        </div>
-      </section>
+      <TeamSection />
     </main>
   );
 }

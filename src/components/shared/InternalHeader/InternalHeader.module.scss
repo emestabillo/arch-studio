@@ -1,0 +1,142 @@
+@use "../../../styles/abstracts/index" as *;
+
+.mainWrrapper {
+  padding-bottom: rem(100px);
+
+  @include breakpoint(sm) {
+    display: grid;
+    grid-template-areas: "content";
+
+    @include breakpoint(lg) {
+      grid-template-areas: unset;
+      grid-template-columns: 60% 1fr;
+    }
+
+    > * {
+      grid-area: content;
+
+      @include breakpoint(lg) {
+        grid-area: unset;
+      }
+    }
+  }
+}
+
+.imageContainer {
+  max-height: rem(720px);
+  position: relative;
+  z-index: -1;
+
+  &::before {
+    background-color: hsla(0, 0%, 0%, 0.35);
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+
+  picture,
+  img {
+    height: 100% !important;
+  }
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.textContainer {
+  @include breakpoint(sm) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+}
+
+.largeHeading {
+  position: absolute;
+  opacity: 0;
+
+  @include breakpoint(sm) {
+    opacity: 1;
+    position: relative;
+    transform: translateY(rem(10px));
+    z-index: 2;
+  }
+
+  @include breakpoint(lg) {
+    position: absolute;
+    transform: translate(1rem, rem(-416px));
+  }
+}
+
+.subtext {
+  --myScale: 0;
+  background-color: var(--clr-white);
+  padding-top: rem(35px);
+  position: relative;
+
+  @include breakpoint(sm) {
+    max-width: 75%;
+    margin-left: auto;
+    padding-left: 10%;
+    padding-top: rem(89px);
+  }
+
+  @include breakpoint(lg) {
+    max-width: rem(456px);
+    transform: translateX(-100px);
+  }
+
+  &::before {
+    content: unset;
+
+    @include breakpoint(sm) {
+      content: "";
+      transform: scale(var(--myScale));
+      transform-origin: left;
+    }
+
+    @include breakpoint(lg) {
+      transform: translateX(150%) scale(var(--myScale));
+    }
+  }
+
+  &::after {
+    background-color: var(--clr-white);
+    content: "";
+    height: rem(45px);
+    left: 0;
+    position: absolute;
+    top: rem(-45px);
+    width: 90%;
+
+    @include breakpoint(sm) {
+      width: 100%;
+    }
+  }
+
+  h2,
+  p {
+    --translateY: 0px;
+    transform: translateY(var(--translateY));
+
+    @include breakpoint(lg) {
+      transform: translate(25%, var(--translateY));
+    }
+  }
+
+  h2 {
+    max-width: 12ch;
+    padding-bottom: rem(30px);
+
+    @include breakpoint(sm) {
+      padding-top: rem(74px);
+    }
+  }
+
+  p {
+    max-width: 95%;
+  }
+}

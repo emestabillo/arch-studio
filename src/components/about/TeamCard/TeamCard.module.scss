@@ -1,0 +1,84 @@
+@use "../../../styles/abstracts/index" as *;
+
+.card {
+  @include breakpoint(md) {
+    position: relative;
+  }
+}
+
+.avatar {
+  img {
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.title {
+  color: var(--clr-dark-blue);
+  font-size: rem(18px);
+  padding-block: rem(24px) rem(4px);
+}
+
+.socialIcons {
+  align-items: center;
+  display: flex;
+  gap: rem(25px);
+  padding-top: rem(8px);
+
+  @include breakpoint(md) {
+    gap: 0;
+    padding-top: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: rem(320px);
+    opacity: 0;
+    transition: var(--transition);
+
+    &::before {
+      position: absolute;
+      background-color: #000;
+      opacity: 0;
+      content: "";
+      height: 100%;
+      width: 100%;
+      transition: var(--transition);
+    }
+
+    &:has(a:hover, a:focus) {
+      opacity: 1;
+
+      &::before {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  a {
+    transition: var(--transition);
+
+    @include breakpoint(md) {
+      flex: 1;
+      display: flex;
+      height: 100%;
+      align-items: center;
+      filter: invert(1) brightness(2);
+    }
+
+    &:first-child {
+      justify-content: flex-end;
+
+      @include breakpoint(md) {
+        padding-right: rem(25px);
+      }
+    }
+
+    &:hover {
+      opacity: 0.75;
+
+      @include breakpoint(md) {
+        opacity: 1;
+      }
+    }
+  }
+}
