@@ -6,7 +6,7 @@ import heroImageTablet from "../../../public/images/about/tablet/image-hero.jpg"
 import heroImageMobile from "../../../public/images/about/mobile/image-hero.jpg";
 import TeamSection from "@/components/about/TeamSection/TeamSection";
 
-export default function page() {
+export default function About() {
   return (
     <main>
       <InternalHeader

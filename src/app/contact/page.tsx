@@ -6,7 +6,7 @@ import heroImageMobile from "../../../public/images/contact/mobile/image-hero.jp
 import styles from "./contact.module.scss";
 import ContactDetailsWithMap from "@/components/contact/ContactDetailsWithMap/ContactDetailsWithMap";
 
-function contact() {
+export default function Contact() {
   return (
     <main>
       <InternalHeader
@@ -29,5 +29,3 @@ function contact() {
     </main>
   );
 }
-
-export default contact;

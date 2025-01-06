@@ -5,6 +5,7 @@
   display: flex;
   justify-content: space-between;
   padding-block: rem(32px);
+  visibility: hidden;
 
   &::before {
     background-color: hsl(0, 0%, 0%);
@@ -88,4 +89,8 @@
   &:hover {
     color: var(--clr-dark-blue);
   }
+}
+
+.activeMenuLink {
+  color: var(--clr-dark-blue);
 }

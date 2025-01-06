@@ -24,8 +24,9 @@ export const createTimeline = (
       },
       {
         clipPath: "inset(0 0 0% 0)",
-        duration: 0.75,
+        duration: 0.65,
         ease: "power2.out",
+        delay: 0.25,
       }
     )
       .fromTo(
@@ -37,10 +38,10 @@ export const createTimeline = (
         {
           opacity: 1,
           "--translateY": 0,
-          duration: 1,
+          duration: 0.85,
           ease: "power2.out",
           stagger: 0.1,
-          delay: 1,
+          delay: 0.6,
         },
         "<"
       )
