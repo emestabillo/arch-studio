@@ -35,7 +35,7 @@ function Header({ links }: NavlinksProps) {
   const handleLinkClick = () => {
     setShowMenu(false);
     gsap.set(navRef.current, { autoAlpha: 0 });
-    fadeInAnimation(navRef, 1.5);
+    fadeInAnimation(navRef, 1);
   };
 
   // Prevent scroll on body when slideout nav is open

@@ -4,6 +4,7 @@
 .carouselWrapper {
   --width: 100%;
   position: relative;
+  animation: fadeIn 950ms ease-in;
 
   @include breakpoint(sm) {
     --width: 90%;
@@ -95,5 +96,14 @@
   &::before {
     color: var(--clr-white);
     background-color: var(--clr-dark-blue);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
