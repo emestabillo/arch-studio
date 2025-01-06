@@ -22,7 +22,6 @@ export default function headingAnimation(container: HTMLElement) {
         scrollTrigger: {
           trigger: h1Element[0],
           start: "top 80%",
-          toggleActions: "play none none reverse",
         },
       }
     );

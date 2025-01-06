@@ -7,7 +7,7 @@ import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
-import fadeInAnimation from "./fadeInAnimation";
+import fadeInAnimation from "../../../animations/fadeInAnimation";
 import hamburgerBtn from "../../../../public/icons/icon-hamburger.svg";
 import closeBtn from "../../../../public/icons/icon-close.svg";
 import { NavlinksProps } from "../navlinks";

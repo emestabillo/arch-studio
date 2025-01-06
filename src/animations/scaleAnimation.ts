@@ -8,20 +8,14 @@ export const scaleAnimation = (
   imageRef: React.RefObject<HTMLDivElement>
 ) => {
   if (sectionRef.current && imageRef.current) {
-    gsap.fromTo(
-      imageRef.current,
-      {
-        scale: 1,
+    gsap.to(imageRef.current, {
+      scale: 1.25,
+      ease: "none",
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        scrub: true,
+        toggleActions: "play none none reverse",
       },
-      {
-        scale: 1.1,
-        ease: "none",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          scrub: true,
-          toggleActions: "play none none reverse",
-        },
-      }
-    );
+    });
   }
 };

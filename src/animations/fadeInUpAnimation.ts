@@ -13,11 +13,7 @@ export function fadeInUpAnimation<T extends HTMLElement>(ref: RefObject<T>) {
       start: "top 85%",
     },
   });
-  timeline.fromTo(
-    ref.current,
-    { opacity: 0, y: 50 },
-    { opacity: 1, y: 0, duration: 0.8 }
-  );
+  timeline.from(ref.current, { opacity: 0, y: 50, duration: 0.8 });
 
   return () => {
     timeline.kill();

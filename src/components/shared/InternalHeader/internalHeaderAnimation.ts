@@ -11,6 +11,7 @@ export const createTimeline = (
 ) => {
   if (containerRef.current) {
     const tl = gsap.timeline({
+      delay: 0.2,
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top 80%",
