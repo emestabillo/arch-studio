@@ -2,11 +2,11 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MutableRefObject } from "react";
 import styles from "./InternalHeader.module.scss";
-import headingAnimation from "@/animations/largeHeadingAnimation";
+import headingAnimation from "@/utils/animations/largeHeadingAnimation";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const createTimeline = (
+export const internalHeaderTimeline = (
   containerRef: MutableRefObject<HTMLDivElement | null>
 ) => {
   if (containerRef.current) {
@@ -30,12 +30,9 @@ export const createTimeline = (
         delay: 0.25,
       }
     )
-      .fromTo(
+      .to(
         containerRef.current?.querySelectorAll("h2, p"),
-        {
-          "--translateY": 50,
-          opacity: 0,
-        },
+
         {
           opacity: 1,
           "--translateY": 0,

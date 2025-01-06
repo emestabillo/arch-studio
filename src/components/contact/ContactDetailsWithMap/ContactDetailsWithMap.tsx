@@ -4,8 +4,8 @@ import { useGSAP } from "@gsap/react";
 import ContactCard from "../ContactDeatilsCard/ContactDeatilsCard";
 import Map from "../Map/Map";
 import styles from "./ContactDetailsWithMap.module.scss";
-import { officeLocations } from "@/data/officeLocations";
-import { fadeInUpAnimation } from "@/animations/fadeInUpAnimation";
+import { officeLocations } from "@/utils/data/officeLocations";
+import { fadeInUpAnimation } from "@/utils/animations/fadeInUpAnimation";
 
 const center = {
   lat: 40.736706,
@@ -47,7 +47,7 @@ export default function ContactDetailsWithMap() {
   };
 
   return (
-    <>
+    <section className={styles.contactWithMapSection}>
       <div
         className={`container bottom-spacing decorative-line ${styles.contentWrapper}`}
         ref={containerRef}
@@ -74,6 +74,6 @@ export default function ContactDetailsWithMap() {
         activeMarker={activeMarker}
         onMarkerClick={handleMarkerClick}
       />
-    </>
+    </section>
   );
 }

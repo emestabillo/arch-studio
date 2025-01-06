@@ -3,8 +3,8 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import styles from "./TeamSection.module.scss";
 import TeamCard from "../TeamCard/TeamCard";
-import { teamMembers } from "@/data/team";
-import { fadeInUpAnimation } from "@/animations/fadeInUpAnimation";
+import { teamMembers } from "@/utils/data/team";
+import { fadeInUpAnimation } from "@/utils/animations/fadeInUpAnimation";
 
 export default function TeamSection() {
   const containerRef = useRef<HTMLDivElement>(null);

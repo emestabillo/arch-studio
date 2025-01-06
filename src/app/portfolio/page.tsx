@@ -1,4 +1,4 @@
-import { projectList } from "@/data/portfolio";
+import { projectList } from "@/utils/data/portfolio";
 import ProjectList from "@/components/portfolio/ProjectList";
 
 export default function portfolio() {

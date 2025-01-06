@@ -15,10 +15,10 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import ImageWithOverlayText from "../ImageWithOverlayText/ImageWithOverlayText";
-import { carouselItems } from "@/data/carouselItems";
+import { carouselItems } from "@/utils/data/carouselItems";
 import styles from "./Carousel.module.scss";
 import LargeHeading from "@/components/ui/LargeHeading/LargeHeading";
-import headingAnimation from "@/animations/largeHeadingAnimation";
+import headingAnimation from "@/utils/animations/largeHeadingAnimation";
 
 export default function Carousel() {
   const swiperRef = useRef<SwiperRef>(null);

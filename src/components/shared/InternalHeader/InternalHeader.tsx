@@ -2,7 +2,7 @@
 import { getImageProps } from "next/image";
 import styles from "./InternalHeader.module.scss";
 import { useRef } from "react";
-import { createTimeline } from "./internalHeaderAnimation";
+import { internalHeaderTimeline } from "./internalHeaderAnimation";
 import { useGSAP } from "@gsap/react";
 import LargeHeading from "@/components/ui/LargeHeading/LargeHeading";
 
@@ -45,7 +45,7 @@ export default function InternalHeader({
   const containerRef = useRef<HTMLDivElement>(null);
   useGSAP(
     () => {
-      createTimeline(containerRef);
+      internalHeaderTimeline(containerRef);
     },
     {
       scope: containerRef,

@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import ProjectCard from "./ProjectCard";
 import styles from "./ProjectList.module.scss";
-import staggerAnimation from "@/animations/staggerAnimation";
+import staggerAnimation from "@/utils/animations/staggerAnimation";
 
 interface Project {
   projectTitle: string;

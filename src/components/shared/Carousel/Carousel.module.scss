@@ -4,7 +4,7 @@
 .carouselWrapper {
   --width: 100%;
   position: relative;
-  animation: fadeIn 950ms ease-in;
+  animation: fadeIn 750ms ease-out;
 
   @include breakpoint(sm) {
     --width: 90%;

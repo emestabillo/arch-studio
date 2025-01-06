@@ -3,7 +3,6 @@ import ContactForm from "@/components/contact/ContactForm/ContactForm";
 import heroImageDesktop from "../../../public/images/contact/desktop/image-hero.jpg";
 import heroImageTablet from "../../../public/images/contact/tablet/image-hero.jpg";
 import heroImageMobile from "../../../public/images/contact/mobile/image-hero.jpg";
-import styles from "./contact.module.scss";
 import ContactDetailsWithMap from "@/components/contact/ContactDetailsWithMap/ContactDetailsWithMap";
 
 export default function Contact() {
@@ -17,15 +16,8 @@ export default function Contact() {
         imageSrcTablet={heroImageTablet.src}
         imageSrcMobile={heroImageMobile.src}
       />
-      <section className={`${styles.contactWithMapSection}`}>
-        <ContactDetailsWithMap />
-      </section>
-      {/* <section className={`top-spacing bottom-spacing ${styles.formSection}`}> */}
-      {/* <div className={`container ${styles.formContentWrapper}`}>
-          <h2>Connect with us</h2> */}
+      <ContactDetailsWithMap />
       <ContactForm />
-      {/* </div> */}
-      {/* </section> */}
     </main>
   );
 }

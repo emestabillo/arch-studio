@@ -7,7 +7,7 @@ import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
-import fadeInAnimation from "../../../animations/fadeInAnimation";
+import fadeInAnimation from "../../../utils/animations/fadeInAnimation";
 import hamburgerBtn from "../../../../public/icons/icon-hamburger.svg";
 import closeBtn from "../../../../public/icons/icon-close.svg";
 import { NavlinksProps } from "../navlinks";
@@ -19,7 +19,7 @@ function Header({ links }: NavlinksProps) {
 
   useGSAP(
     () => {
-      fadeInAnimation(navRef);
+      fadeInAnimation(navRef, 0.8);
     },
     { scope: navRef }
   );

@@ -1,5 +1,11 @@
 @use "../../../styles/abstracts/index" as *;
 
+.contactWithMapSection {
+  @include breakpoint(md) {
+    margin-top: rem(100px);
+  }
+}
+
 .contentWrapper {
   padding-top: rem(74px);
 

@@ -5,7 +5,7 @@ import Image from "next/image";
 import Button from "../../ui/Button/Button";
 import styles from "./ImageWithOverlayText.module.scss";
 import arrow from "../../../../public/icons/icon-arrow.svg";
-import { scaleAnimation } from "@/animations/scaleAnimation";
+import { scaleAnimation } from "@/utils/animations/scaleAnimation";
 interface ImageWithOverlayTextProps {
   variant?: "default" | "carouselItem";
   heading: string;

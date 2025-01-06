@@ -4,7 +4,7 @@ import { useGSAP } from "@gsap/react";
 import styles from "./ContactForm.module.scss";
 import Button from "../../ui/Button/Button";
 import arrow from "../../../../public/icons/icon-arrow.svg";
-import { fadeInUpAnimation } from "@/animations/fadeInUpAnimation";
+import { fadeInUpAnimation } from "@/utils/animations/fadeInUpAnimation";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
