@@ -18,12 +18,14 @@ export default function Button({
   icon,
   alt = "",
   otherClass,
+  ...props
 }: ButtonProps) {
   if (href) {
     return (
       <Link
         href={href}
         className={`${styles.btn} ${styles[variant]} ${otherClass}`}
+        {...props}
       >
         {text} {icon && <Image src={icon} alt={alt} />}
       </Link>
@@ -32,7 +34,7 @@ export default function Button({
 
   return (
     <button className={`${styles.btn} ${styles[variant]}`}>
-      {text} {icon && <Image src={icon} alt={alt} />}
+      {text} {icon && <Image src={icon} alt={alt} {...props} />}
     </button>
   );
 }

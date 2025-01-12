@@ -79,18 +79,36 @@
 }
 
 .menuLink {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: var(--clr-medium-gray);
   font-weight: 700;
   padding-block: rem(12px);
+  position: relative;
   text-transform: capitalize;
   transition: all 0.2s ease-in-out;
 
   &:hover {
     color: var(--clr-dark-blue);
   }
+
+  &::after {
+    content: "";
+    background-color: transparent;
+    bottom: 0;
+    position: absolute;
+    height: 1px;
+    width: 40%;
+  }
 }
 
 .activeMenuLink {
   color: var(--clr-dark-blue);
+
+  &::after {
+    @include breakpoint(sm) {
+      background-color: var(--clr-dark-blue);
+    }
+  }
 }
