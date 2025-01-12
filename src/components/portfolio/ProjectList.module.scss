@@ -3,7 +3,7 @@
 .grid {
   display: grid;
   gap: rem(24px);
-  padding-block: rem(56px) rem(132px);
+  padding-bottom: rem(132px);
 
   @include breakpoint(sm) {
     padding-bottom: rem(132px);
@@ -12,7 +12,7 @@
   @include breakpoint(md) {
     grid-template-columns: repeat(auto-fit, minmax(311px, 1fr));
     gap: rem(30px);
-    padding-block: rem(24px) rem(160px);
+    padding-bottom: rem(160px);
   }
 }
 

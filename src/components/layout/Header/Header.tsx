@@ -11,10 +11,12 @@ import fadeInAnimation from "../../../utils/animations/fadeInAnimation";
 import hamburgerBtn from "../../../../public/icons/icon-hamburger.svg";
 import closeBtn from "../../../../public/icons/icon-close.svg";
 import { NavlinksProps } from "../navlinks";
+import PageTitle from "@/components/shared/PageTitle/PageTitle";
 
-function Header({ links }: NavlinksProps) {
+export default function Header({ links }: NavlinksProps) {
   const [showMenu, setShowMenu] = useState(false);
   const pathname = usePathname();
+  const pageName = usePathname().replace(/^\//, "") || "home";
   const navRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
@@ -88,8 +90,7 @@ function Header({ links }: NavlinksProps) {
           })}
         </ul>
       </nav>
+      <PageTitle title={pageName} />
     </header>
   );
 }
-
-export default Header;

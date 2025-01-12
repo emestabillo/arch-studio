@@ -1,0 +1,32 @@
+@use "../../../styles/abstracts/index" as *;
+
+.title {
+  color: var(--clr-light-gray);
+  display: flex;
+  align-items: center;
+  font-size: rem(15px);
+  letter-spacing: 1em;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  padding-top: rem(162px);
+  position: fixed;
+  text-transform: uppercase;
+  top: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: -1;
+
+  @include breakpoint(xl) {
+    margin-left: rem(-80px);
+    visibility: visible;
+  }
+
+  &::before {
+    background-color: var(--clr-light-gray);
+    content: "";
+    position: absolute;
+    height: rem(104px);
+    top: 0;
+    width: 1px;
+  }
+}

@@ -9,10 +9,9 @@ type ButtonProps = {
   icon?: string;
   alt?: string;
   otherClass?: string;
-  // onClick: () => void;
 };
 
-function Button({
+export default function Button({
   text,
   href,
   variant = "primary",
@@ -37,5 +36,3 @@ function Button({
     </button>
   );
 }
-
-export default Button;

@@ -1,10 +1,10 @@
 "use client";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import styles from "./FeaturedProjects.module.scss";
 import { projectList } from "@/utils/data/portfolio";
 import ProjectCard from "../../portfolio/ProjectCard";
 import Button from "@/components/ui/Button/Button";
+import styles from "./FeaturedProjects.module.scss";
 import arrow from "../../../../public/icons/icon-arrow.svg";
 import { fadeInUpAnimation } from "@/utils/animations/fadeInUpAnimation";
 
