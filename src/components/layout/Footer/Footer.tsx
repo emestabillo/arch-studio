@@ -10,9 +10,9 @@ export default function Footer({ links }: NavlinksProps) {
   return (
     <footer className={styles.footer}>
       <div className={`container ${styles.footerContent}`}>
-        <div className={styles.logoContainer}>
+        <Link href="/" className={styles.logoContainer}>
           <Image src={logo} alt="Arch Studio logo" className={styles.logo} />
-        </div>
+        </Link>
         <nav className={styles.nav}>
           <ul className={styles.navLinksContainer}>
             {links.map((link) => {

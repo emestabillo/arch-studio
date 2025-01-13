@@ -59,6 +59,14 @@
     @include breakpoint(md) {
       transform: translateX(rem(60px));
     }
+
+    @include breakpoint(lg) {
+      transform: translateX(rem(190px));
+
+      p {
+        width: 80%;
+      }
+    }
   }
 
   .imageContainer {
