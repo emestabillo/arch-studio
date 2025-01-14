@@ -5,12 +5,19 @@ import ProjectCard from "./ProjectCard";
 import styles from "./ProjectList.module.scss";
 import staggerAnimation from "@/utils/animations/staggerAnimation";
 
+interface ImageField {
+  fields: {
+    file: {
+      url: string;
+    };
+  };
+}
 interface Project {
-  projectTitle: string;
-  subHeading: string;
-  imageSrcDesktop: string;
-  imageSrcTablet: string;
-  imageSrcMobile: string;
+  propertyName: string;
+  dateBuilt: string;
+  imageSrcDesktop: ImageField;
+  imageSrcTablet: ImageField;
+  imageSrcMobile: ImageField;
   featured?: boolean;
 }
 
@@ -33,13 +40,13 @@ export default function ProjectList({ projectList }: ProjectListProps) {
     <ul ref={containerRef} className={styles.grid}>
       {projectList.map((project) => (
         <ProjectCard
-          key={project.projectTitle}
+          key={project.propertyName}
           variant="defaultCard"
-          projectTitle={project.projectTitle}
-          subHeading={project.subHeading}
-          imageSrcDesktop={project.imageSrcDesktop}
-          imageSrcTablet={project.imageSrcTablet}
-          imageSrcMobile={project.imageSrcMobile}
+          propertyName={project.propertyName}
+          dateBuilt={project.dateBuilt}
+          imageSrcDesktop={`https:${project.imageSrcDesktop.fields.file.url}`}
+          imageSrcTablet={`https:${project.imageSrcTablet.fields.file.url}`}
+          imageSrcMobile={`https:${project.imageSrcMobile.fields.file.url}`}
         />
       ))}
     </ul>
