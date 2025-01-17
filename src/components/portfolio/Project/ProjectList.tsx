@@ -3,26 +3,11 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import ProjectCard from "./ProjectCard";
 import styles from "./ProjectList.module.scss";
+import { ProjectProps } from "@/contentful/Project";
 import staggerAnimation from "@/utils/animations/staggerAnimation";
 
-interface ImageField {
-  fields: {
-    file: {
-      url: string;
-    };
-  };
-}
-interface Project {
-  propertyName: string;
-  dateBuilt: string;
-  imageSrcDesktop: ImageField;
-  imageSrcTablet: ImageField;
-  imageSrcMobile: ImageField;
-  featured?: boolean;
-}
-
 interface ProjectListProps {
-  projectList: Project[];
+  projectList: ProjectProps[];
 }
 
 export default function ProjectList({ projectList }: ProjectListProps) {
@@ -44,9 +29,9 @@ export default function ProjectList({ projectList }: ProjectListProps) {
           variant="defaultCard"
           propertyName={project.propertyName}
           dateBuilt={project.dateBuilt}
-          imageSrcDesktop={`https:${project.imageSrcDesktop.fields.file.url}`}
-          imageSrcTablet={`https:${project.imageSrcTablet.fields.file.url}`}
-          imageSrcMobile={`https:${project.imageSrcMobile.fields.file.url}`}
+          imageSrcDesktop={`https:${project.imageSrcDesktop?.src}`}
+          imageSrcTablet={`https:${project.imageSrcTablet?.src}`}
+          imageSrcMobile={`https:${project.imageSrcMobile?.src}`}
         />
       ))}
     </ul>

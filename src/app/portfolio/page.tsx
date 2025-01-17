@@ -1,9 +1,9 @@
-import ProjectList from "@/components/portfolio/ProjectList";
-import { getProject } from "../../utils/contentful";
+import ProjectList from "../../components/portfolio/Project/ProjectList";
+import { fetchProjects } from "../../contentful/Project";
 
 export default async function portfolio() {
-  const propertyList = await getProject();
-  // console.log("Pl:", propertyList);
+  const propertyList = await fetchProjects();
+
   return (
     <section className="container">
       <ProjectList projectList={propertyList} />

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { getImageProps } from "next/image";
 import styles from "./ProjectList.module.scss";
 
-interface ProjectCardProps {
+export interface ProjectCardProps {
   variant?: "defaultCard" | "numberedCard";
   propertyName: string;
   dateBuilt?: string;
