@@ -6,16 +6,19 @@ import type {
   LocaleCode,
 } from "contentful";
 
-export interface TypeProjectFields {
+export interface TypeContentfulProjectFields {
   propertyName: EntryFieldTypes.Symbol;
   dateBuilt: EntryFieldTypes.Symbol;
+  description?: EntryFieldTypes.Symbol;
+  featured?: EntryFieldTypes.Boolean;
+  order: EntryFieldTypes.Number;
   imageSrcDesktop: EntryFieldTypes.AssetLink;
   imageSrcTablet: EntryFieldTypes.AssetLink;
   imageSrcMobile: EntryFieldTypes.AssetLink;
 }
 
 export type TypeProjectSkeleton = EntrySkeletonType<
-  TypeProjectFields,
+  TypeContentfulProjectFields,
   "archStudio"
 >;
 

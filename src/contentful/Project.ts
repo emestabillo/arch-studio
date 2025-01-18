@@ -11,6 +11,9 @@ type ProjectEntry = Entry<TypeProjectSkeleton, undefined, string>;
 export interface ProjectProps {
   propertyName: string;
   dateBuilt: string;
+  description?: string;
+  featured?: boolean;
+  order: number;
   imageSrcDesktop: ContentImageProps | null;
   imageSrcTablet: ContentImageProps | null;
   imageSrcMobile: ContentImageProps | null;
@@ -26,6 +29,9 @@ export function parseContentfulProject(
   return {
     propertyName: projectEntry.fields.propertyName || "",
     dateBuilt: projectEntry.fields.dateBuilt || "",
+    description: projectEntry.fields.description || "",
+    featured: projectEntry.fields.featured || false,
+    order: projectEntry.fields.order || 0,
     imageSrcDesktop: parseContentfulContentImage(
       projectEntry.fields.imageSrcDesktop
     ),
@@ -48,27 +54,27 @@ export async function fetchProjects(): Promise<ProjectProps[]> {
   const allProjectsResult = await contentful.getEntries<TypeProjectSkeleton>({
     content_type: "archStudio",
   });
-  console.log("All results:", allProjectsResult);
-  return allProjectsResult.items.map(
+
+  const allProjects = allProjectsResult.items.map(
+    (projectEntry) => parseContentfulProject(projectEntry) as ProjectProps
+  );
+
+  allProjects.sort((a, b) => b.order - a.order);
+
+  return allProjects;
+}
+
+export async function fetchFeaturedProjects(): Promise<ProjectProps[]> {
+  const contentful = contentfulClient({ preview: false });
+
+  const featuredProjectsResult =
+    await contentful.getEntries<TypeProjectSkeleton>({
+      content_type: "archStudio",
+      "fields.featured": true,
+      order: ["-sys.updatedAt"],
+    });
+
+  return featuredProjectsResult.items.map(
     (projectEntry) => parseContentfulProject(projectEntry) as ProjectProps
   );
 }
-
-// interface FetchBlogPostOptions {
-//   slug: string;
-//   preview: boolean;
-// }
-// export async function fetchBlogPost({
-//   slug,
-//   preview,
-// }: FetchBlogPostOptions): Promise<BlogPost | null> {
-//   const contentful = contentfulClient({ preview });
-
-//   const blogPostsResult = await contentful.getEntries<TypeBlogPostSkeleton>({
-//     content_type: "blogPost",
-//     "fields.slug": slug,
-//     include: 2,
-//   });
-
-//   return parseContentfulBlogPost(blogPostsResult.items[0]);
-// }

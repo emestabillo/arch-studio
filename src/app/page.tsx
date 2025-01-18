@@ -7,8 +7,11 @@ import TwoColTextWithImage from "@/components/shared/TwoColTextWithImage/TwoColT
 import welcomeImage from "../../public/images/home/desktop/image-welcome.jpg";
 import Carousel from "@/components/shared/Carousel/Carousel";
 import FeaturedProjects from "@/components/home/FeaturedProjects/FeaturedProjects";
+import { fetchFeaturedProjects } from "@/contentful/Project";
 
-export default function Home() {
+export default async function home() {
+  const propertyList = await fetchFeaturedProjects();
+
   return (
     <main>
       <section className={`bottom-spacing ${styles.carouselSection}`}>
@@ -35,7 +38,7 @@ export default function Home() {
           enableAnimation={true}
         />
       </section>
-      <FeaturedProjects />
+      <FeaturedProjects projectList={propertyList} />
     </main>
   );
 }
