@@ -1,10 +1,12 @@
-import { projectList } from "@/utils/data/portfolio";
-import ProjectList from "@/components/portfolio/ProjectList";
+import ProjectList from "../../components/portfolio/Project/ProjectList";
+import { fetchProjects } from "../../contentful/Project";
 
-export default function portfolio() {
+export default async function portfolio() {
+  const propertyList = await fetchProjects();
+
   return (
     <section className="container">
-      <ProjectList projectList={projectList} />
+      <ProjectList projectList={propertyList} />
     </section>
   );
 }

@@ -2,10 +2,10 @@ import Link from "next/link";
 import { getImageProps } from "next/image";
 import styles from "./ProjectList.module.scss";
 
-interface ProjectCardProps {
+export interface ProjectCardProps {
   variant?: "defaultCard" | "numberedCard";
-  projectTitle: string;
-  subHeading?: string;
+  propertyName: string;
+  dateBuilt?: string;
   ctaLinkText?: string;
   ctaLinkUrl?: string;
   imageSrcDesktop: string;
@@ -15,8 +15,8 @@ interface ProjectCardProps {
 
 export default function ProjectCard({
   variant = "numberedCard",
-  projectTitle,
-  subHeading,
+  propertyName,
+  dateBuilt,
   ctaLinkText,
   ctaLinkUrl,
   imageSrcDesktop,
@@ -53,10 +53,10 @@ export default function ProjectCard({
       <div className={styles.textContainer}>
         {variant === "defaultCard" ? (
           <h3 className={styles.heading}>
-            <Link href="/portfolio">{projectTitle}</Link>
+            <Link href="/portfolio">{propertyName}</Link>
           </h3>
         ) : (
-          <h3 className={styles.heading}>{projectTitle}</h3>
+          <h3 className={styles.heading}>{propertyName}</h3>
         )}
 
         {variant === "numberedCard" && ctaLinkUrl && (
@@ -65,7 +65,7 @@ export default function ProjectCard({
           </Link>
         )}
         {variant === "defaultCard" && (
-          <p className={styles.subheading}>{subHeading}</p>
+          <p className={styles.subheading}>{dateBuilt}</p>
         )}
       </div>
       <div className={styles.imageContainer}>

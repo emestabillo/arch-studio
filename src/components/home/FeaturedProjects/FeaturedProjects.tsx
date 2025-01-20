@@ -1,15 +1,19 @@
 "use client";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import { projectList } from "@/utils/data/portfolio";
-import ProjectCard from "../../portfolio/ProjectCard";
+// import { projectList } from "@/utils/data/portfolio";
+import ProjectCard from "../../portfolio/Project/ProjectCard";
 import Button from "@/components/ui/Button/Button";
 import styles from "./FeaturedProjects.module.scss";
 import arrow from "../../../../public/icons/icon-arrow.svg";
 import { fadeInUpAnimation } from "@/utils/animations/fadeInUpAnimation";
+import { ProjectProps } from "@/contentful/Project";
+interface ProjectListProps {
+  projectList: ProjectProps[];
+}
 
-export default function FeaturedProjects() {
-  const featuredProjects = projectList.filter((project) => project.featured);
+export default function FeaturedProjects({ projectList }: ProjectListProps) {
+  // const featuredProjects = projectList.filter((project) => project.featured);
 
   const containerRef = useRef<HTMLDivElement>(null);
   useGSAP(
@@ -26,15 +30,15 @@ export default function FeaturedProjects() {
     >
       <h2>Featured</h2>
       <ul className={styles.featuredCardsContainer}>
-        {featuredProjects.map((project) => (
+        {projectList.map((project) => (
           <ProjectCard
-            key={project.projectTitle}
+            key={project.propertyName}
             variant="numberedCard"
-            projectTitle={project.projectTitle}
-            subHeading={project.subHeading}
-            imageSrcDesktop={project.imageSrcDesktop}
-            imageSrcTablet={project.imageSrcTablet}
-            imageSrcMobile={project.imageSrcMobile}
+            propertyName={project.propertyName}
+            dateBuilt={project.dateBuilt}
+            imageSrcDesktop={`https:${project.imageSrcDesktop?.src}`}
+            imageSrcTablet={`https:${project.imageSrcTablet?.src}`}
+            imageSrcMobile={`https:${project.imageSrcMobile?.src}`}
             ctaLinkText="View all projects"
             ctaLinkUrl="/portfolio"
           />

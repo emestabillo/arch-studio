@@ -3,19 +3,11 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import ProjectCard from "./ProjectCard";
 import styles from "./ProjectList.module.scss";
+import { ProjectProps } from "@/contentful/Project";
 import staggerAnimation from "@/utils/animations/staggerAnimation";
 
-interface Project {
-  projectTitle: string;
-  subHeading: string;
-  imageSrcDesktop: string;
-  imageSrcTablet: string;
-  imageSrcMobile: string;
-  featured?: boolean;
-}
-
 interface ProjectListProps {
-  projectList: Project[];
+  projectList: ProjectProps[];
 }
 
 export default function ProjectList({ projectList }: ProjectListProps) {
@@ -33,13 +25,13 @@ export default function ProjectList({ projectList }: ProjectListProps) {
     <ul ref={containerRef} className={styles.grid}>
       {projectList.map((project) => (
         <ProjectCard
-          key={project.projectTitle}
+          key={project.propertyName}
           variant="defaultCard"
-          projectTitle={project.projectTitle}
-          subHeading={project.subHeading}
-          imageSrcDesktop={project.imageSrcDesktop}
-          imageSrcTablet={project.imageSrcTablet}
-          imageSrcMobile={project.imageSrcMobile}
+          propertyName={project.propertyName}
+          dateBuilt={project.dateBuilt}
+          imageSrcDesktop={`https:${project.imageSrcDesktop?.src}`}
+          imageSrcTablet={`https:${project.imageSrcTablet?.src}`}
+          imageSrcMobile={`https:${project.imageSrcMobile?.src}`}
         />
       ))}
     </ul>

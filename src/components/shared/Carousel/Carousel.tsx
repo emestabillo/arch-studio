@@ -15,12 +15,16 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import ImageWithOverlayText from "../ImageWithOverlayText/ImageWithOverlayText";
-import { carouselItems } from "@/utils/data/carouselItems";
 import styles from "./Carousel.module.scss";
+import { ProjectProps } from "@/contentful/Project";
 import LargeHeading from "@/components/ui/LargeHeading/LargeHeading";
 import headingAnimation from "@/utils/animations/largeHeadingAnimation";
 
-export default function Carousel() {
+interface CarouselProps {
+  carouselItems: ProjectProps[];
+}
+
+export default function Carousel({ carouselItems }: CarouselProps) {
   const swiperRef = useRef<SwiperRef>(null);
   const paginationRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -71,13 +75,13 @@ export default function Carousel() {
         className="mySwiper"
       >
         {carouselItems.map((item) => (
-          <SwiperSlide key={item.title}>
+          <SwiperSlide key={item.propertyName}>
             <ImageWithOverlayText
               variant="carouselItem"
-              imageSrcDesktop={item.imageSrcDesktop}
-              imageSrcTablet={item.imageSrcTablet}
-              imageSrcMobile={item.imageSrcMobile}
-              heading={item.title}
+              imageSrcDesktop={`https:${item.imageHeroDesktop?.src}`}
+              imageSrcTablet={`https:${item.imageHeroDesktop?.src}`}
+              imageSrcMobile={`https:${item.imageHeroDesktop?.src}`}
+              heading={item.propertyName}
               paragraph={item.description}
               ctaText="see our portfolio"
               href="/portfolio"
