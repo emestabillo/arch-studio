@@ -15,6 +15,10 @@ export interface TypeContentfulProjectFields {
   imageSrcDesktop: EntryFieldTypes.AssetLink;
   imageSrcTablet: EntryFieldTypes.AssetLink;
   imageSrcMobile: EntryFieldTypes.AssetLink;
+  carouselItem?: EntryFieldTypes.Boolean;
+  imageHeroDesktop: EntryFieldTypes.AssetLink;
+  imageHeroTablet: EntryFieldTypes.AssetLink;
+  imageHeroMobile: EntryFieldTypes.AssetLink;
 }
 
 export type TypeProjectSkeleton = EntrySkeletonType<

@@ -17,6 +17,10 @@ export interface ProjectProps {
   imageSrcDesktop: ContentImageProps | null;
   imageSrcTablet: ContentImageProps | null;
   imageSrcMobile: ContentImageProps | null;
+  carouselItem?: boolean;
+  imageHeroDesktop?: ContentImageProps | null;
+  imageHeroTablet?: ContentImageProps | null;
+  imageHeroMobile?: ContentImageProps | null;
 }
 
 export function parseContentfulProject(
@@ -41,40 +45,34 @@ export function parseContentfulProject(
     imageSrcMobile: parseContentfulContentImage(
       projectEntry.fields.imageSrcMobile
     ),
+    carouselItem: projectEntry.fields.carouselItem || false,
+    imageHeroDesktop: parseContentfulContentImage(
+      projectEntry.fields.imageHeroDesktop
+    ),
+    imageHeroTablet: parseContentfulContentImage(
+      projectEntry.fields.imageHeroTablet
+    ),
+    imageHeroMobile: parseContentfulContentImage(
+      projectEntry.fields.imageHeroMobile
+    ),
   };
 }
 
-// interface FetchProjectsOptions {
-//   preview: boolean;
-// }
-
 export async function fetchProjects(): Promise<ProjectProps[]> {
-  const contentful = contentfulClient({ preview: false });
+  try {
+    const contentful = contentfulClient({ preview: false });
 
-  const allProjectsResult = await contentful.getEntries<TypeProjectSkeleton>({
-    content_type: "archStudio",
-  });
-
-  const allProjects = allProjectsResult.items.map(
-    (projectEntry) => parseContentfulProject(projectEntry) as ProjectProps
-  );
-
-  allProjects.sort((a, b) => b.order - a.order);
-
-  return allProjects;
-}
-
-export async function fetchFeaturedProjects(): Promise<ProjectProps[]> {
-  const contentful = contentfulClient({ preview: false });
-
-  const featuredProjectsResult =
-    await contentful.getEntries<TypeProjectSkeleton>({
+    const allProjectsResult = await contentful.getEntries<TypeProjectSkeleton>({
       content_type: "archStudio",
-      "fields.featured": true,
-      order: ["-sys.updatedAt"],
     });
 
-  return featuredProjectsResult.items.map(
-    (projectEntry) => parseContentfulProject(projectEntry) as ProjectProps
-  );
+    const allProjects = allProjectsResult.items.map(
+      (projectEntry) => parseContentfulProject(projectEntry) as ProjectProps
+    );
+    const sortedProjects = allProjects.sort((a, b) => b.order - a.order);
+    return sortedProjects;
+  } catch (error) {
+    console.error("Error fetching projects:", error);
+    return [];
+  }
 }
