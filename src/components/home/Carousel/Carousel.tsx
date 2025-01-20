@@ -14,7 +14,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
-import ImageWithOverlayText from "../ImageWithOverlayText/ImageWithOverlayText";
+import ImageWithOverlayText from "../../shared/ImageWithOverlayText/ImageWithOverlayText";
 import styles from "./Carousel.module.scss";
 import { ProjectProps } from "@/contentful/Project";
 import LargeHeading from "@/components/ui/LargeHeading/LargeHeading";

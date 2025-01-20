@@ -1,4 +1,4 @@
-import styles from "./PageTitle.module.scss";
+import styles from "./FixedPageTitle.module.scss";
 
 export default function PageTitle({ title }: { title: string }) {
   return (

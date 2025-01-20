@@ -16,7 +16,7 @@ export default function staggerAnimation(container: HTMLElement) {
         delay: (index % cardPerRow) * 0.2,
         scrollTrigger: {
           trigger: card,
-          start: "top 85%",
+          start: "top 95%",
         },
       });
     });

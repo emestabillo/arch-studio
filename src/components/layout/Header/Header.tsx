@@ -11,7 +11,7 @@ import fadeInAnimation from "../../../utils/animations/fadeInAnimation";
 import hamburgerBtn from "../../../../public/icons/icon-hamburger.svg";
 import closeBtn from "../../../../public/icons/icon-close.svg";
 import { NavlinksProps } from "../navlinks";
-import PageTitle from "@/components/shared/PageTitle/PageTitle";
+import PageTitle from "@/components/shared/FixedPageTitle/FixedPageTitle";
 
 export default function Header({ links }: NavlinksProps) {
   const [showMenu, setShowMenu] = useState(false);

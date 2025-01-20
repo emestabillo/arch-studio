@@ -5,7 +5,7 @@ import imageSrcDesktop from "../../public/images/home/desktop/image-small-team.j
 import styles from "./home.module.scss";
 import TwoColTextWithImage from "@/components/shared/TwoColTextWithImage/TwoColTextWithImage";
 import welcomeImage from "../../public/images/home/desktop/image-welcome.jpg";
-import Carousel from "@/components/shared/Carousel/Carousel";
+import Carousel from "@/components/home/Carousel/Carousel";
 import FeaturedProjects from "@/components/home/FeaturedProjects/FeaturedProjects";
 import { fetchProjects } from "@/contentful/Project";
 
