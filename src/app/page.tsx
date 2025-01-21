@@ -3,11 +3,11 @@ import imageSrcMobile from "../../public/images/home/mobile/image-small-team.jpg
 import imageSrcTablet from "../../public/images/home/tablet/image-small-team.jpg";
 import imageSrcDesktop from "../../public/images/home/desktop/image-small-team.jpg";
 import styles from "./home.module.scss";
-import TwoColTextWithImage from "@/components/shared/TwoColTextWithImage/TwoColTextWithImage";
+import TwoColTextWithImage from "../components/shared/TwoColTextWithImage/TwoColTextWithImage";
 import welcomeImage from "../../public/images/home/desktop/image-welcome.jpg";
-import Carousel from "@/components/home/Carousel/Carousel";
-import FeaturedProjects from "@/components/home/FeaturedProjects/FeaturedProjects";
-import { fetchProjects } from "@/contentful/Project";
+import Carousel from "../components/shared/Carousel/Carousel";
+import FeaturedProjects from "../components/home/FeaturedProjects/FeaturedProjects";
+import { fetchProjects } from "../contentful/Project";
 
 export default async function home() {
   const response = await fetchProjects();
