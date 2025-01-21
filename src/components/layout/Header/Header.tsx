@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import hamburgerBtn from "../../../../public/icons/icon-hamburger.svg";
+import logo from "../../../../public/logo-main.svg";
 import closeBtn from "../../../../public/icons/icon-close.svg";
 import { NavlinksProps } from "../navlinks";
 import PageTitle from "@/components/shared/FixedPageTitle/FixedPageTitle";
@@ -39,7 +40,7 @@ export default function Header({ links }: NavlinksProps) {
   return (
     <header className={`container ${styles.header}`}>
       <Link href="/" className={styles.headerLogo} onClick={handleLinkClick}>
-        <Image src="/logo-main.svg" alt="Scoot - Home" width="78" height="32" />
+        <Image src={logo} alt="Arch Studio - Home" width="78" height="32" />
       </Link>
       <nav>
         <button

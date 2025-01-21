@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Button from "../../ui/Button/Button";
 import styles from "./Footer.module.scss";
-import logo from "../../../../public/logo-white.svg";
+import whiteLogo from "../../../../public/logo-white.svg";
 import arrow from "../../../../public/icons/icon-arrow.svg";
 import { NavlinksProps } from "../navlinks";
 
@@ -11,7 +11,11 @@ export default function Footer({ links }: NavlinksProps) {
     <footer className={styles.footer}>
       <div className={`container ${styles.footerContent}`}>
         <Link href="/" className={styles.logoContainer}>
-          <Image src={logo} alt="Arch Studio logo" className={styles.logo} />
+          <Image
+            src={whiteLogo}
+            alt="Arch Studio - Home"
+            className={styles.logo}
+          />
         </Link>
         <nav className={styles.nav}>
           <ul className={styles.navLinksContainer}>
