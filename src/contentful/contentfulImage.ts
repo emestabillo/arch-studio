@@ -2,9 +2,6 @@ import { Asset, AssetLink } from "contentful";
 
 export interface ContentImageProps {
   src: string;
-  // alt: string;
-  // width: number;
-  // height: number;
 }
 
 export function parseContentfulContentImage(
@@ -20,8 +17,5 @@ export function parseContentfulContentImage(
 
   return {
     src: asset.fields.file?.url || "",
-    // alt: asset.fields.description || "",
-    // width: asset.fields.file?.details.image?.width || 0,
-    // height: asset.fields.file?.details.image?.height || 0,
   };
 }

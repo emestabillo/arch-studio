@@ -97,14 +97,6 @@
     padding-left: rem(35px);
     width: 100%;
 
-    // &:focus {
-    //   outline-width: 0;
-    // }
-
-    // &:focus-visible {
-    //   outline: 1px solid red;
-    // }
-
     &.error {
       border-bottom-color: var(--clr-red);
     }
@@ -121,4 +113,17 @@
   inset-block: rem(40px) rem(24px);
   position: absolute;
   right: 0;
+}
+
+.successMessage {
+  font-size: rem(18px);
+  display: flex;
+  justify-content: center;
+  min-height: rem(374px);
+  width: 80%;
+
+  @include breakpoint(md) {
+    text-align: center;
+    margin-inline: auto;
+  }
 }

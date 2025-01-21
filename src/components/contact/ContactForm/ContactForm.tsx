@@ -19,6 +19,8 @@ export default function ContactForm() {
     message: "",
   });
 
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   const containerRef = useRef<HTMLDivElement>(null);
   useGSAP(
     () => {
@@ -54,12 +56,13 @@ export default function ContactForm() {
       return;
     }
 
-    // Clear the form after successful submission
     setFormData({
       name: "",
       email: "",
       message: "",
     });
+
+    setIsSubmitted(true);
   };
 
   const handleChange = (
@@ -71,7 +74,6 @@ export default function ContactForm() {
       [name]: value,
     }));
   };
-  //   console.log("Form data:", Object.fromEntries(formData.entries()));
 
   return (
     <section
@@ -80,71 +82,78 @@ export default function ContactForm() {
     >
       <div className={`container ${styles.formContentWrapper}`}>
         <h2>Connect with us</h2>
-        <form onSubmit={handleSubmit} noValidate className={styles.form}>
-          <div className={styles.formField}>
-            <label
-              htmlFor="name"
-              className={formData.name ? styles.active : ""}
-            >
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              className={errors.name ? styles.error : ""}
-            />
-            {errors.name && (
-              <span className={styles.errorText} aria-live="assertive">
-                {errors.name}
-              </span>
-            )}
-          </div>
-          <div className={styles.formField}>
-            <label
-              htmlFor="email"
-              className={formData.email ? styles.active : ""}
-            >
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className={errors.email ? styles.error : ""}
-            />
-            {errors.email && (
-              <span className={styles.errorText} aria-live="assertive">
-                {errors.email}
-              </span>
-            )}
-          </div>
-          <div className={styles.formField}>
-            <label
-              htmlFor="message"
-              className={formData.message ? styles.active : ""}
-            >
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              className={errors.message ? styles.error : ""}
-            />
-            {errors.message && (
-              <span className={styles.errorText} aria-live="assertive">
-                {errors.message}
-              </span>
-            )}
-          </div>
-          <Button icon={arrow} />
-        </form>
+        {isSubmitted ? (
+          <p className={styles.successMessage}>
+            Thanks for contacting us! We&apos;ll review your details and get
+            back to you as soon as possible.
+          </p>
+        ) : (
+          <form onSubmit={handleSubmit} noValidate className={styles.form}>
+            <div className={styles.formField}>
+              <label
+                htmlFor="name"
+                className={formData.name ? styles.active : ""}
+              >
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                className={errors.name ? styles.error : ""}
+              />
+              {errors.name && (
+                <span className={styles.errorText} aria-live="assertive">
+                  {errors.name}
+                </span>
+              )}
+            </div>
+            <div className={styles.formField}>
+              <label
+                htmlFor="email"
+                className={formData.email ? styles.active : ""}
+              >
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className={errors.email ? styles.error : ""}
+              />
+              {errors.email && (
+                <span className={styles.errorText} aria-live="assertive">
+                  {errors.email}
+                </span>
+              )}
+            </div>
+            <div className={styles.formField}>
+              <label
+                htmlFor="message"
+                className={formData.message ? styles.active : ""}
+              >
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                className={errors.message ? styles.error : ""}
+              />
+              {errors.message && (
+                <span className={styles.errorText} aria-live="assertive">
+                  {errors.message}
+                </span>
+              )}
+            </div>
+            <Button icon={arrow} />
+          </form>
+        )}
       </div>
     </section>
   );

@@ -3,11 +3,8 @@
 import styles from "./Header.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
-import fadeInAnimation from "../../../utils/animations/fadeInAnimation";
 import hamburgerBtn from "../../../../public/icons/icon-hamburger.svg";
 import closeBtn from "../../../../public/icons/icon-close.svg";
 import { NavlinksProps } from "../navlinks";
@@ -17,14 +14,6 @@ export default function Header({ links }: NavlinksProps) {
   const [showMenu, setShowMenu] = useState(false);
   const pathname = usePathname();
   const pageName = usePathname().replace(/^\//, "") || "home";
-  const navRef = useRef<HTMLDivElement>(null);
-
-  useGSAP(
-    () => {
-      fadeInAnimation(navRef, 0.8);
-    },
-    { scope: navRef }
-  );
 
   const toggleMenu = () => {
     setShowMenu((current) => !current);
@@ -36,8 +25,6 @@ export default function Header({ links }: NavlinksProps) {
 
   const handleLinkClick = () => {
     setShowMenu(false);
-    gsap.set(navRef.current, { autoAlpha: 0 });
-    fadeInAnimation(navRef, 1);
   };
 
   // Prevent scroll on body when slideout nav is open
@@ -45,12 +32,12 @@ export default function Header({ links }: NavlinksProps) {
     toggleBodyOverflow(showMenu);
 
     return () => {
-      document.body.classList.remove("header-menu-open");
+      document.body.classList.remove("overflow-hidden");
     };
   }, [showMenu]);
 
   return (
-    <header className={`container ${styles.header}`} ref={navRef}>
+    <header className={`container ${styles.header}`}>
       <Link href="/" className={styles.headerLogo} onClick={handleLinkClick}>
         <Image src="/logo-main.svg" alt="Scoot - Home" width="78" height="32" />
       </Link>
