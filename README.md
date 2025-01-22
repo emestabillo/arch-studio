@@ -46,11 +46,11 @@ Users should be able to:
 
 <!-- - Solution URL: [Add solution URL here](https://your-solution-url.com) -->
 
-- Live Site URL: [Add live site URL here](https://arch-studio-alpha.vercel.app/)
+- [Live Site URL](https://arch-studio-alpha.vercel.app/)
 
 ### Built with
 
-- [Next.js](https://nextjs.org/) - React framework
+- [Next.js](https://nextjs.org/)
 - [CSS modules](https://css-tricks.com/css-modules-part-1-need/)
 - [Contentful](https://www.contentful.com/)
 - [Google Maps](https://developers.google.com/maps/documentation/javascript)
@@ -72,7 +72,7 @@ I'm considering adding project detail pages that allows users to view in-depth p
 ### Useful resources
 
 - [Integrate Contentful to Next.js](https://www.contentful.com/blog/integrate-contentful-next-js-app-router/)
-- I found [this article](https://www.99darshan.com/posts/interactive-maps-using-nextjs-and-google-maps) to be helpful in implementing the map.
+- I found [this article](https://www.99darshan.com/posts/interactive-maps-using-nextjs-and-google-maps) to be helpful in implementing the map
 
 ## Author
 
