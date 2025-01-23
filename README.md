@@ -61,9 +61,9 @@ Users should be able to:
 
 ### What I learned
 
-I initially envisioned this project as a straightforward design-to-development exercise, but I decided to elevate its complexity. I migrated the provided JSON data into Contentful, allowing for dynamic content management. I also implemented the bonus challenge where users can view office locations on an embedded Google Map by clicking on the links on the contact details section. Intersecting Next.js, Contentful, and GSAP with Typescript was new to me, and it presented valuable learning opportunities.
+I initially envisioned this project as a straightforward design-to-development exercise, but as I started working on it, I decided to add some complexity. I migrated the provided JSON data into Contentful, allowing for dynamic content management. I also implemented the bonus challenge where users can view office locations on an embedded Google Map by clicking on the links on the contact details section. Intersecting Next.js, Contentful, and GSAP with Typescript was new to me, and it presented valuable learning opportunities.
 
-Design-wise, there were some components that were tricky to implement like the responsive design of the internal hero and the employee cards with the social media links overlay found on the `/contact` page. On the design, I also found the base font to be less than the standard, so I increased it to 16px to keep the site accessible.
+From a design perspective, there were some components that were tricky to implement like the responsive layout of the internal hero and keeping the the employee cards (on the `/about` page) accessible on desktop, where the social media links are only visible on hover. I also leveraged Andy Bell's pseudo-content technique to ensure the portfolio project cards remained accessible while structuring them as list items in the markup.
 
 ### Continued development
 
@@ -73,8 +73,9 @@ I'm considering adding project detail pages that allows users to view in-depth p
 
 - [Integrate Contentful to Next.js](https://www.contentful.com/blog/integrate-contentful-next-js-app-router/)
 - I found [this article](https://www.99darshan.com/posts/interactive-maps-using-nextjs-and-google-maps) to be helpful in implementing the map
+- [Andy Bell's Inclusive Components](https://inclusive-components.design/cards/) for making the project cards accessible
 
 ## Author
 
 - Frontend Mentor - [@emestabillo](https://www.frontendmentor.io/profile/emestabillo)
-- Twitter - [@emestabillo](https://www.x.com/emestabillo)
+- X - [@emestabillo](https://www.x.com/emestabillo)

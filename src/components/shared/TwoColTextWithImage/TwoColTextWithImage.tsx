@@ -11,6 +11,7 @@ interface TwoColTextWithImageProps {
   headingVariant?: string;
   paragraphs: string[];
   imgSrc: string;
+  altText?: string;
 }
 
 export default function TwoColTextWithImage({
@@ -19,6 +20,7 @@ export default function TwoColTextWithImage({
   headingVariant,
   paragraphs,
   imgSrc,
+  altText = "",
 }: TwoColTextWithImageProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   useGSAP(
@@ -52,7 +54,7 @@ export default function TwoColTextWithImage({
         })}
       </div>
       <div className={styles.imageContainer}>
-        <Image src={imgSrc} alt="Small team, big ideas" fill sizes="50vw" />
+        <Image src={imgSrc} alt={altText} fill sizes="50vw" />
       </div>
     </section>
   );

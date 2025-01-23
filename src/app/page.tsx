@@ -28,6 +28,7 @@ export default async function home() {
           "We work closely with our clients so that we understand the intricacies of each project. This allows us to work in harmony the surrounding area to create truly stunning projects that will stand the test of time.",
         ]}
         imgSrc={welcomeImage.src}
+        altText="Building showcasing iconic modern architecture and gleaming metallic exterior."
       />
       <section className="container top-spacing bottom-spacing">
         <ImageWithOverlayText
