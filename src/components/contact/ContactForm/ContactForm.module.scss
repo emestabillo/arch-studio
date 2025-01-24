@@ -94,8 +94,8 @@
     border: none;
     border-bottom: 1px solid;
     padding-block: rem(40px) rem(24px);
-    padding-left: rem(35px);
-    width: 100%;
+    padding-inline: rem(35px) rem(16px);
+    width: 100% !important;
 
     &.error {
       border-bottom-color: var(--clr-red);
@@ -111,6 +111,7 @@
   color: var(--clr-red);
   font-weight: 700;
   inset-block: rem(40px) rem(24px);
+  pointer-events: none;
   position: absolute;
   right: 0;
 }

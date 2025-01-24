@@ -2,7 +2,6 @@ import ImageWithOverlayText from "@/components/shared/ImageWithOverlayText/Image
 import imageSrcMobile from "../../public/images/home/mobile/image-small-team.jpg";
 import imageSrcTablet from "../../public/images/home/tablet/image-small-team.jpg";
 import imageSrcDesktop from "../../public/images/home/desktop/image-small-team.jpg";
-import styles from "./home.module.scss";
 import TwoColTextWithImage from "../components/shared/TwoColTextWithImage/TwoColTextWithImage";
 import welcomeImage from "../../public/images/home/desktop/image-welcome.jpg";
 import Carousel from "../components/shared/Carousel/Carousel";
@@ -16,9 +15,7 @@ export default async function home() {
 
   return (
     <main>
-      <section className={`bottom-spacing ${styles.carouselSection}`}>
-        <Carousel carouselItems={carouselItems} />
-      </section>
+      <Carousel carouselItems={carouselItems} />
       <TwoColTextWithImage
         variant="narrowImage"
         heading="Welcome to Arch Studio"

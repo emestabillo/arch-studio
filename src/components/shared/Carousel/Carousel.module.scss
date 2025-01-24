@@ -1,6 +1,26 @@
 @use "../../ui/Button/Button.module.scss" as btn;
 @use "../../../styles/abstracts/index" as *;
 
+.carouselSection {
+  @include breakpoint(sm) {
+    padding-bottom: rem(100px);
+  }
+
+  @include breakpoint(md) {
+    padding-bottom: rem(150px);
+  }
+
+  &:has(+ :global.decorative-line) {
+    + :global.decorative-line {
+      &::before {
+        @include breakpoint(sm) {
+          content: unset;
+        }
+      }
+    }
+  }
+}
+
 .carouselWrapper {
   --width: 100%;
   position: relative;
