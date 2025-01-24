@@ -12,6 +12,12 @@ export default async function home() {
   const response = await fetchProjects();
   const propertyList = response.filter((project) => project.featured);
   const carouselItems = response.filter((project) => project.carouselItem);
+  if (carouselItems.length > 1) {
+    const lastItem = carouselItems.pop();
+    if (lastItem) {
+      carouselItems.unshift(lastItem);
+    }
+  }
 
   return (
     <main>
