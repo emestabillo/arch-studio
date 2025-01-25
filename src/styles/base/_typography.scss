@@ -50,3 +50,9 @@ h3 {
     font-size: rem(18px);
   }
 }
+
+p {
+  @include mixin.breakpoint(sm) {
+    font-size: rem(18px);
+  }
+}

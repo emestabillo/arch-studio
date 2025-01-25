@@ -11,7 +11,6 @@ export default function LargeHeading({
   level,
   children,
   homeHeroHeading,
-  ref,
   ...props
 }: LargeHeadingProps) {
   const Heading = `h${level}` as "h1" | "h2";
@@ -21,7 +20,6 @@ export default function LargeHeading({
       className={`${styles.largeHeading} ${
         homeHeroHeading ? styles.homeHeroHeading : styles.internalHeading
       }`}
-      ref={ref}
     >
       {children}
     </Heading>
