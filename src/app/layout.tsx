@@ -9,7 +9,7 @@ const spartan = localFont({
   src: [
     {
       path: "../../public/fonts/Spartan-Medium.ttf",
-      weight: "400",
+      weight: "500",
     },
     {
       path: "../../public/fonts/Spartan-Bold.ttf",

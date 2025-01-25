@@ -1,9 +1,9 @@
 "use client";
 import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
+// import { useGSAP } from "@gsap/react";
 import styles from "./TwoColTextWithImage.module.scss";
 import Image from "next/image";
-import { fadeInUpAnimation } from "@/utils/animations/fadeInUpAnimation";
+// import { fadeInUpAnimation } from "@/utils/animations/fadeInUpAnimation";
 
 interface TwoColTextWithImageProps {
   variant?: "default" | "narrowImage";
@@ -23,12 +23,12 @@ export default function TwoColTextWithImage({
   altText = "",
 }: TwoColTextWithImageProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  useGSAP(
-    () => {
-      fadeInUpAnimation(containerRef);
-    },
-    { scope: containerRef }
-  );
+  // useGSAP(
+  //   () => {
+  //     fadeInUpAnimation(containerRef);
+  //   },
+  //   { scope: containerRef }
+  // );
 
   return (
     <section

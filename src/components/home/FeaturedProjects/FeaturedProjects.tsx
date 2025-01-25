@@ -1,7 +1,6 @@
 "use client";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-// import { projectList } from "@/utils/data/portfolio";
 import ProjectCard from "../../portfolio/Project/ProjectCard";
 import Button from "@/components/ui/Button/Button";
 import styles from "./FeaturedProjects.module.scss";
@@ -13,8 +12,6 @@ interface ProjectListProps {
 }
 
 export default function FeaturedProjects({ projectList }: ProjectListProps) {
-  // const featuredProjects = projectList.filter((project) => project.featured);
-
   const containerRef = useRef<HTMLDivElement>(null);
   useGSAP(
     () => {
@@ -24,10 +21,7 @@ export default function FeaturedProjects({ projectList }: ProjectListProps) {
   );
 
   return (
-    <section
-      className={`container top-spacing ${styles.featuredSection}`}
-      ref={containerRef}
-    >
+    <section className={`container top-spacing ${styles.featuredSection}`}>
       <h2>Featured</h2>
       <ul className={styles.featuredCardsContainer}>
         {projectList.map((project) => (
