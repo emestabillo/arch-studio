@@ -18,7 +18,7 @@ import ImageWithOverlayText from "../../shared/ImageWithOverlayText/ImageWithOve
 import styles from "./Carousel.module.scss";
 import { ProjectProps } from "@/contentful/Project";
 import LargeHeading from "@/components/ui/LargeHeading/LargeHeading";
-// import headingAnimation from "@/utils/animations/largeHeadingAnimation";
+import headingAnimation from "@/utils/animations/largeHeadingAnimation";
 
 interface CarouselProps {
   carouselItems: ProjectProps[];
@@ -42,10 +42,10 @@ export default function Carousel({ carouselItems }: CarouselProps) {
       swiper.pagination.update();
     }
 
-    // if (containerRef.current) {
-    //   const animateHeading = headingAnimation(containerRef.current);
-    //   return animateHeading;
-    // }
+    if (containerRef.current) {
+      const animateHeading = headingAnimation(containerRef.current);
+      return animateHeading;
+    }
   }, []);
 
   return (

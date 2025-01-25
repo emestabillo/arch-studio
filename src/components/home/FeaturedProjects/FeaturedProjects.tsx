@@ -21,7 +21,10 @@ export default function FeaturedProjects({ projectList }: ProjectListProps) {
   );
 
   return (
-    <section className={`container top-spacing ${styles.featuredSection}`}>
+    <section
+      className={`container top-spacing ${styles.featuredSection}`}
+      ref={containerRef}
+    >
       <h2>Featured</h2>
       <ul className={styles.featuredCardsContainer}>
         {projectList.map((project) => (

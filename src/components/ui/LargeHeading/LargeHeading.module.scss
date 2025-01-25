@@ -3,7 +3,7 @@
 .largeHeading {
   color: transparent;
   position: absolute;
-  // visibility: hidden;
+  visibility: hidden;
 
   @include breakpoint(sm) {
     color: var(--clr-very-light-gray);
