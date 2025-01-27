@@ -15,9 +15,13 @@
   transform: translateY(rem(10px));
   z-index: 2;
 
+  @include breakpoint(md) {
+    transform: translateY(rem(30px));
+  }
+
   @include breakpoint(lg) {
     position: absolute;
-    transform: translate(1rem, rem(-416px));
+    transform: translate(1rem, rem(-344px));
   }
 }
 

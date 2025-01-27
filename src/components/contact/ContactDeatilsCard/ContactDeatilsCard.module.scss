@@ -1,11 +1,5 @@
 @use "../../../styles/abstracts/index" as *;
 
-.leftColumn {
-  > * {
-    line-height: 2.3;
-  }
-}
-
 .detailsWrapper {
   @include breakpoint(sm) {
     display: flex;
@@ -32,6 +26,7 @@
   display: flex;
   align-items: center;
   gap: rem(24px);
+  font-size: rem(18px);
   font-weight: 700;
   padding-top: rem(16px);
   text-decoration: underline transparent;

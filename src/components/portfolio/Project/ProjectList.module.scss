@@ -85,10 +85,10 @@
 
 .heading {
   color: var(--clr-white);
-  font-size: rem(18px);
+  font-size: rem(32px);
   font-weight: 700;
   letter-spacing: 0;
-  line-height: 1.4;
+  line-height: 0.8;
 
   a {
     color: inherit;
@@ -118,6 +118,7 @@
 
 .ctaLink {
   color: inherit;
+  font-size: rem(18px);
   text-transform: capitalize;
   text-decoration: underline;
   text-decoration-color: transparent;

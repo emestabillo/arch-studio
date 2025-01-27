@@ -28,18 +28,19 @@ h1 {
   }
 
   @include mixin.breakpoint(lg) {
-    font-size: rem(200px);
+    font-size: rem(250px);
   }
 }
 
 h2 {
   color: var(--clr-dark-blue);
-  font-size: rem(40px);
+  font-size: rem(48px);
   letter-spacing: -0.036em;
 
   @include mixin.breakpoint(sm) {
-    font-size: rem(56px);
+    font-size: rem(72px);
     letter-spacing: -0.025em;
+    line-height: 0.9;
   }
 }
 
@@ -49,4 +50,9 @@ h3 {
   @include mixin.breakpoint(md) {
     font-size: rem(18px);
   }
+}
+
+p {
+  font-size: rem(18px);
+  line-height: 1.3;
 }

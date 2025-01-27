@@ -26,7 +26,7 @@ export default function ContactCard({
   };
   return (
     <div className={styles.detailsWrapper}>
-      <div className={styles.leftColumn}>
+      <div>
         <h3 className={styles.office}>{office}</h3>
         <p className={styles.detail}>Mail: {email}</p>
         <p className={styles.detail}>

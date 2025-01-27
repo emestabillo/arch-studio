@@ -36,9 +36,11 @@
 
 .carouselHeading {
   font-size: rem(48px);
+  line-height: 1;
 
   @include breakpoint(sm) {
-    font-size: rem(80px);
+    font-size: rem(96px);
+    line-height: 0.833;
   }
 }
 

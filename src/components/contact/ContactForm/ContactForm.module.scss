@@ -29,13 +29,15 @@
 }
 
 .form {
+  font-size: rem(18px);
+
   @include breakpoint(md) {
     flex: 1;
   }
 
   button {
     margin-left: auto;
-    transform: translateY(-9px);
+    transform: translateY(-10px);
     @include breakpoint(md) {
     }
   }
