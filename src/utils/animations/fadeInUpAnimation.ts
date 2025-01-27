@@ -10,7 +10,7 @@ export function fadeInUpAnimation<T extends HTMLElement>(ref: RefObject<T>) {
   const timeline = gsap.timeline({
     scrollTrigger: {
       trigger: ref.current,
-      start: "top 85%",
+      start: "top 82%",
     },
   });
   timeline.from(ref.current, { opacity: 0, y: 50, duration: 0.8 });

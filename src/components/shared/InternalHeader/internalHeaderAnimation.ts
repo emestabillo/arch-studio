@@ -27,7 +27,6 @@ export const internalHeaderTimeline = (
         clipPath: "inset(0 0 0% 0)",
         duration: 0.65,
         ease: "power2.out",
-        delay: 0.25,
       }
     )
       .to(
