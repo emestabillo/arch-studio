@@ -29,6 +29,12 @@ export const internalHeaderTimeline = (
         ease: "power2.out",
       }
     )
+      .fromTo(
+        containerRef.current?.querySelector(`picture`),
+        { scale: 1.1 },
+        { scale: 1, duration: 0.65, ease: "power2.out" },
+        "<"
+      )
       .to(
         containerRef.current?.querySelectorAll("h2, p"),
 
